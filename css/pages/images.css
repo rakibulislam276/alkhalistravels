@@ -1,0 +1,97 @@
+
+/* ================================================================
+   IMAGES.CSS — Real Image Integration for All Pages
+   ================================================================ */
+
+/* ── HERO BACKGROUNDS ─────────────────────────────────────────── */
+.hero                        { background-image: url('../assets/images/hero-home.jpg'); background-size: cover; background-position: center; }
+#flight-page .page-hero      { background-image: url('../assets/images/hero-flight.jpg'); background-size: cover; background-position: center top; }
+#visa-page .page-hero        { background-image: url('../assets/images/hero-visa.jpg'); background-size: cover; background-position: center; }
+#hotel-page .page-hero       { background-image: url('../assets/images/hero-hotel.jpg'); background-size: cover; background-position: center; }
+#packages-page .page-hero    { background-image: url('../assets/images/hero-packages.jpg'); background-size: cover; background-position: center; }
+#forex-page .page-hero       { background-image: url('../assets/images/hero-forex.jpg'); background-size: cover; background-position: center; }
+#hajj-page .page-hero        { background-image: url('../assets/images/hero-hajj.jpg'); background-size: cover; background-position: center; }
+#contact-page .page-hero     { background-image: url('../assets/images/hero-contact.jpg'); background-size: cover; background-position: center; }
+#about-page .page-hero       { background-image: url('../assets/images/hero-about.jpg'); background-size: cover; background-position: center; }
+#blog-page .page-hero        { background-image: url('../assets/images/hero-blog.jpg'); background-size: cover; background-position: center; }
+
+/* Darker overlay on hero images */
+.page-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(6,14,28,0.65) 0%, rgba(6,14,28,0.45) 60%, rgba(6,14,28,0.70) 100%);
+  z-index: 0;
+}
+.page-hero__content { position: relative; z-index: 2; }
+
+/* Hero home overlay */
+.hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(6,14,28,0.82) 0%, rgba(10,22,40,0.65) 50%, rgba(6,14,28,0.78) 100%);
+  z-index: 1;
+}
+.hero__content { z-index: 2; position: relative; }
+.hero__bg-glow, .hero__bg-glow2, .hero__pattern, .hero__stars, .hero__plane-deco { display: none; }
+
+/* ── DESTINATION CARDS ────────────────────────────────────────── */
+.dest-card[data-dest="dubai"]     .dest-card__bg { background-image: url('../assets/images/dest-dubai.jpg'); background-size: cover; }
+.dest-card[data-dest="makkah"]    .dest-card__bg { background-image: url('../assets/images/dest-makkah.jpg'); background-size: cover; }
+.dest-card[data-dest="singapore"] .dest-card__bg { background-image: url('../assets/images/dest-singapore.jpg'); background-size: cover; }
+.dest-card[data-dest="paris"]     .dest-card__bg { background-image: url('../assets/images/dest-paris.jpg'); background-size: cover; }
+
+/* ── BLOG THUMBNAILS ──────────────────────────────────────────── */
+.blog-thumb-umrah  { background-image: url('../assets/images/blog-umrah.jpg'); background-size: cover; background-position: center; }
+.blog-thumb-dubai  { background-image: url('../assets/images/blog-dubai.jpg'); background-size: cover; background-position: center; }
+.blog-thumb-visa   { background-image: url('../assets/images/blog-visa.jpg'); background-size: cover; background-position: center; }
+.blog-thumb-family { background-image: url('../assets/images/blog-family.jpg'); background-size: cover; background-position: center; }
+.blog-thumb-forex  { background-image: url('../assets/images/blog-forex.jpg'); background-size: cover; background-position: center; }
+
+/* ── LOGO IN NAVBAR ───────────────────────────────────────────── */
+.nav-logo__img {
+  height: 72px;          /* increased from 44px */
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  display: block;
+  /* ensure crisp rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.nav-logo__mark { display: none; }
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .nav-logo__img { height: 72px; }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav-logo__img { height: 62px; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-logo__img { height: 52px; max-width: 160px; }
+}
+
+/* ── LOGO IN FOOTER ───────────────────────────────────────────── */
+.footer-logo-img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 0.8rem;
+  filter: brightness(1.1);
+}
+
+/* ── OG IMAGES path correct ──────────────────────────────────── */
+.team-avatar-img {
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--gold);
+  display: block;
+  margin: 0 auto 1rem;
+}

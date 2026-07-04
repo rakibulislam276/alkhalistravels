@@ -1,0 +1,14 @@
+/* ================================================================
+   MAIN.CSS — Master Import Bundle
+   Al Khalis Tours and Travels v2.0
+   Import order matters: tokens → layout → components → nav → pages
+   ================================================================ */
+
+/* ── BASE ──────────────────────────────────────────────────── */
+@import url('../base/tokens.css');
+@import url('../base/layout.css');
+
+/* ── COMPONENTS ────────────────────────────────────────────── */
+@import url('./components.css');
+@import url('./animations.css');
+@import url('./nav.css');

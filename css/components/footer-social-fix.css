@@ -1,0 +1,214 @@
+/* ================================================================
+   FOOTER-SOCIAL-FIX.CSS
+   1. Footer social icon buttons
+   2. WhatsApp & Call floating buttons
+   3. Trust badge styling
+   ================================================================ */
+
+/* ── FOOTER SOCIAL BUTTONS ──────────────────────────────────── */
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.footer-social__btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.footer-social__btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.footer-social__btn:hover {
+  background: var(--sc, #B8860B);
+  border-color: var(--sc, #B8860B);
+  color: #FFFFFF;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* Newsletter column social — slightly smaller spacing */
+.footer-social--newsletter {
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+/* ── FLOATING BUTTONS WRAP ──────────────────────────────────── */
+.float-btns-wrap {
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 997;
+}
+
+.float-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  transition: all 0.28s ease;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.float-btn svg {
+  width: 26px;
+  height: 26px;
+}
+
+.float-btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+}
+
+/* WhatsApp — green */
+.float-btn--wa {
+  background: #25D366;
+}
+
+.float-btn--wa:hover {
+  background: #1DB954;
+}
+
+/* Call — blue */
+.float-btn--call {
+  background: #1565C0;
+}
+
+.float-btn--call:hover {
+  background: #1E88E5;
+}
+
+/* Tooltip on hover */
+.float-btn__tip {
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(10,22,40,0.92);
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.70rem;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.float-btn:hover .float-btn__tip {
+  opacity: 1;
+}
+
+/* ── TRUST BADGES ───────────────────────────────────────────── */
+.footer-certs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 6px 10px;
+  transition: all 0.22s ease;
+}
+
+.trust-badge:hover {
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(184,134,11,0.40);
+}
+
+.trust-badge__logo {
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+  filter: brightness(1.1);
+}
+
+.trust-badge__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.trust-badge__name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  white-space: nowrap;
+}
+
+.trust-badge__sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.58rem;
+  color: rgba(255,255,255,0.55);
+  white-space: nowrap;
+}
+
+/* ── SCROLL TO TOP BUTTON ───────────────────────────────────── */
+.float-btn--top {
+  background: #1A1A2E;
+  border: 1.5px solid rgba(184,134,11,0.5);
+  cursor: pointer;
+}
+
+.float-btn--top:hover {
+  background: #B8860B;
+  border-color: #B8860B;
+}
+
+/* ── FOOTER CERT IMAGE (single image replaces 4 boxes) ──────── */
+.footer-certs-img-wrap {
+  margin-top: 1rem;
+}
+
+.footer-certs-img-wrap img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  /* Keep original logo colours — no filter that alters hue */
+  filter: brightness(1.05) contrast(1.02);
+  transition: opacity 0.2s ease;
+}
+
+.footer-certs-img-wrap img:hover {
+  opacity: 1 !important;
+}
+@media (max-width: 480px) {
+  .float-btns-wrap { right: 14px; bottom: 80px; }
+  .float-btn { width: 46px; height: 46px; }
+  .float-btn svg { width: 22px; height: 22px; }
+  .float-btn__tip { display: none; }
+}

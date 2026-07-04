@@ -1,0 +1,266 @@
+/* ================================================================
+   HOMEPAGE-SECTIONS-FIX.CSS
+   Fixes: Services grid layout, Destinations grid, Why Choose Us
+   Add to every HTML page <head>:
+   index.html     → <link rel="stylesheet" href="./css/components/homepage-sections-fix.css">
+   pages/*.html   → <link rel="stylesheet" href="../css/components/homepage-sections-fix.css">
+   ================================================================ */
+
+/* ── SERVICES GRID (What We Offer) ─────────────────────────── */
+.services-img-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) { .services-img-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .services-img-grid { grid-template-columns: 1fr; } }
+
+/* Service card with real photo */
+.service-card--img {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  border: 1px solid #E9ECEF;
+}
+
+.service-card--img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.13);
+}
+
+.service-card__img-wrap {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.service-card__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.service-card--img:hover .service-card__bg-img {
+  transform: scale(1.06);
+}
+
+.service-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10,22,40,0.10) 0%, rgba(10,22,40,0.55) 100%);
+}
+
+.service-card__label {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  right: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.service-card__body {
+  padding: 1rem 1.1rem 1.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.service-card__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1A1A2E;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.service-card__desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  color: #6C757D;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.service-card__link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #B8860B;
+  margin-top: 0.3rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap 0.2s ease;
+}
+
+.service-card--img:hover .service-card__link { gap: 8px; }
+
+/* ── DESTINATIONS GRID (Popular Destinations) ───────────────── */
+.destinations-img-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+@media (max-width: 1024px) { .destinations-img-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .destinations-img-grid { grid-template-columns: 1fr 1fr; gap: 0.7rem; } }
+
+.dest-card {
+  position: relative;
+  height: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.dest-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.dest-card:hover .dest-card__img { transform: scale(1.07); }
+
+.dest-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.65) 100%);
+  transition: opacity 0.3s ease;
+}
+
+.dest-card:hover .dest-card__overlay { opacity: 0.8; }
+
+.dest-card__price {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(184,134,11,0.92);
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+.dest-card__info {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+}
+
+.dest-card__name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.dest-card__sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.80);
+  margin-top: 3px;
+}
+
+/* ── WHY CHOOSE US — Remove old trust badges, add Kashmir image ─ */
+/* Hide the old badge-pill boxes */
+.why-badges,
+.cert-badges,
+.cert-pills,
+.trust-badges-row,
+.why-trust-badges,
+.why-certs {
+  display: none !important;
+}
+
+/* Kashmir Group Tour image in Why Choose Us right panel */
+.why-card-img-wrap {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+}
+
+.why-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+
+/* Floating badge on Why Choose Us image */
+.why-card-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #B8860B, #DAA520);
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 30px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Floating "Limited Seats" notice */
+.why-card-notice {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(10,22,40,0.85);
+  border: 1px solid rgba(184,134,11,0.4);
+  color: #DAA520;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.why-card-notice::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ADE80;
+  animation: blink 1.4s step-end infinite;
+}
+
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }

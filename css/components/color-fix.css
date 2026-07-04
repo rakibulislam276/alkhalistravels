@@ -1,0 +1,945 @@
+/* ================================================================
+   COLOR-FIX.CSS — Complete White Background + Dark Text Fix
+   Al Khalis Tours and Travels v2.0
+   
+   RULE: 
+   - White/light backgrounds  → Dark text (#1A1A2E or #2C3E50)
+   - Dark/navy backgrounds    → White text (hero, footer, stats bar, CTA)
+   - Gold backgrounds         → Navy text (#0D1B2A)
+   ================================================================ */
+
+/* ═══════════════════════════════════════════════════════════════
+   1. GLOBAL BASE
+═══════════════════════════════════════════════════════════════ */
+
+body {
+  background: #FFFFFF !important;
+  color: #1A1A2E !important;
+  font-family: 'Poppins', system-ui, sans-serif !important;
+}
+
+/* All sections default white bg, dark text */
+section, .section, .section-sm, .section-lg {
+  background: #FFFFFF;
+  color: #1A1A2E;
+}
+
+/* Alternate section — very light grey */
+.bg-cream, .section-cream {
+  background: #F8F9FA !important;
+  color: #1A1A2E !important;
+}
+
+/* Headings everywhere — dark unless inside dark section */
+h1, h2, h3, h4, h5, h6 {
+  color: #1A1A2E;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+p { color: #2C3E50; }
+
+/* ═══════════════════════════════════════════════════════════════
+   2. SECTION LABELS, TITLES, DESCRIPTIONS
+═══════════════════════════════════════════════════════════════ */
+
+.section-label {
+  color: #B8860B !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 0.70rem !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+}
+
+.section-title {
+  color: #1A1A2E !important;
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 700 !important;
+}
+
+.section-title span {
+  color: #B8860B !important;
+}
+
+.section-desc {
+  color: #5D6D7E !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 1rem !important;
+  line-height: 1.78 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   3. SERVICE CARDS
+═══════════════════════════════════════════════════════════════ */
+
+.service-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E9ECEF !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+  color: #1A1A2E !important;
+}
+
+.service-card:hover {
+  border-color: #B8860B !important;
+  box-shadow: 0 8px 28px rgba(184,134,11,0.15) !important;
+  transform: translateY(-4px);
+}
+
+.service-card__title {
+  color: #1A1A2E !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+}
+
+.service-card__desc {
+  color: #5D6D7E !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.88rem !important;
+  line-height: 1.70 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   4. TESTIMONIAL CARDS
+═══════════════════════════════════════════════════════════════ */
+
+.testi-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E9ECEF !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+  color: #1A1A2E !important;
+}
+
+.testi-card__text {
+  color: #2C3E50 !important;
+  font-style: italic;
+  line-height: 1.75;
+}
+
+.testi-card__name {
+  color: #1A1A2E !important;
+  font-weight: 700 !important;
+}
+
+.testi-card__trip {
+  color: #B8860B !important;
+  font-weight: 500;
+}
+
+.testi-card__stars {
+  color: #F4B942 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   5. HOTEL CARDS
+═══════════════════════════════════════════════════════════════ */
+
+.hotel-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E9ECEF !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+  color: #1A1A2E !important;
+}
+
+.hotel-card:hover {
+  border-color: #B8860B !important;
+  box-shadow: 0 10px 32px rgba(0,0,0,0.12) !important;
+  transform: translateY(-4px);
+}
+
+.hotel-card__body {
+  background: #FFFFFF !important;
+  color: #1A1A2E !important;
+}
+
+.hotel-card__name {
+  color: #1A1A2E !important;
+  font-weight: 700 !important;
+}
+
+.hotel-card__loc {
+  color: #5D6D7E !important;
+}
+
+.hotel-price-big {
+  color: #0D1B2A !important;
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 700 !important;
+}
+
+.hotel-price-per {
+  color: #5D6D7E !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   6. PACKAGE CARDS
+═══════════════════════════════════════════════════════════════ */
+
+.pkg-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E9ECEF !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+}
+
+.pkg-card:hover {
+  border-color: #B8860B !important;
+  transform: translateY(-4px);
+}
+
+.pkg-card__body {
+  background: #FFFFFF !important;
+  color: #1A1A2E !important;
+}
+
+.pkg-card__name {
+  color: #1A1A2E !important;
+  font-weight: 700 !important;
+}
+
+.pkg-card__dest {
+  color: #5D6D7E !important;
+}
+
+.pkg-price-big {
+  color: #0D1B2A !important;
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 700 !important;
+}
+
+.pkg-price-note {
+  color: #5D6D7E !important;
+}
+
+.pkg-inc {
+  background: rgba(184,134,11,0.08) !important;
+  color: #7A5C00 !important;
+  border: 1px solid rgba(184,134,11,0.20) !important;
+  font-size: 0.70rem !important;
+  padding: 3px 9px !important;
+  border-radius: 40px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   7. BLOG CARDS
+═══════════════════════════════════════════════════════════════ */
+
+.blog-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E9ECEF !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+  border-radius: 14px;
+}
+
+.blog-card__body {
+  background: #FFFFFF !important;
+  color: #1A1A2E !important;
+}
+
+.blog-title {
+  color: #1A1A2E !important;
+  font-weight: 700 !important;
+  font-size: 1.05rem !important;
+}
+
+.blog-excerpt {
+  color: #5D6D7E !important;
+  font-size: 0.88rem !important;
+  line-height: 1.72 !important;
+}
+
+.blog-meta-item, .blog-author {
+  color: #8E9BAB !important;
+  font-size: 0.78rem !important;
+}
+
+.blog-tag {
+  background: rgba(184,134,11,0.08) !important;
+  color: #7A5C00 !important;
+  border: 1px solid rgba(184,134,11,0.20) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   8. HAJJ / UMRAH TIER CARDS BODY
+═══════════════════════════════════════════════════════════════ */
+
+.hajj-tier-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E9ECEF !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+}
+
+/* Header area stays dark (has its own gradient) */
+.hajj-tier-card__header {
+  /* keep dark bg — text stays white here */
+  color: #FFFFFF !important;
+}
+
+.hajj-tier-card__name  { color: #FFFFFF !important; }
+.hajj-tier-card__dur   { color: rgba(255,255,255,0.75) !important; }
+.hajj-tier-card__price { color: #FFFFFF !important; }
+
+/* Card BODY — white bg, dark text */
+.hajj-tier-card__body {
+  background: #FFFFFF !important;
+  color: #1A1A2E !important;
+}
+
+.tier-feature {
+  color: #2C3E50 !important;
+  font-size: 0.86rem !important;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 4px 0;
+}
+
+.tier-feature__check { color: #27AE60 !important; font-weight: 700; }
+
+/* ═══════════════════════════════════════════════════════════════
+   9. ABOUT — TIMELINE + TEAM + VALUES
+═══════════════════════════════════════════════════════════════ */
+
+/* Timeline */
+.timeline { border-left: 2px solid #E9ECEF !important; }
+.timeline-item { padding: 0 0 1.5rem 1.5rem; position: relative; }
+.timeline-year  { color: #B8860B !important; font-weight: 700; font-size: 0.88rem; }
+.timeline-title { color: #1A1A2E !important; font-weight: 600; font-size: 0.95rem; margin: 2px 0; }
+.timeline-desc  { color: #5D6D7E !important; font-size: 0.85rem; line-height: 1.65; }
+
+/* Team cards */
+.card.card__body {
+  background: #FFFFFF !important;
+  border: 1px solid #E9ECEF !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+  color: #1A1A2E !important;
+}
+
+.card.card__body p { color: #5D6D7E !important; }
+
+/* ═══════════════════════════════════════════════════════════════
+   10. CONTACT PAGE
+═══════════════════════════════════════════════════════════════ */
+
+/* Contact info card stays dark — intentional */
+.contact-info-card {
+  background: linear-gradient(135deg, #0D1B2A, #1B2A3E) !important;
+  border-radius: 18px;
+}
+
+.contact-info-card h3,
+.contact-info-card .contact-detail__label,
+.contact-info-card .contact-detail__value {
+  /* stays white — dark bg */
+}
+
+/* Contact detail outside the card */
+.contact-detail__label {
+  color: #8E9BAB !important;
+  font-size: 0.70rem !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+}
+
+/* Departure cards */
+.departure-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E9ECEF !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+  color: #1A1A2E !important;
+}
+
+.departure-card:hover {
+  border-color: #B8860B !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   11. FORMS — white bg, dark labels
+═══════════════════════════════════════════════════════════════ */
+
+.form-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E9ECEF !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08) !important;
+}
+
+.form-label {
+  color: #495057 !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.80rem !important;
+  font-weight: 600 !important;
+}
+
+.form-label--light {
+  /* Used in dark search boxes — keep white */
+  color: rgba(255,255,255,0.75) !important;
+}
+
+.form-control {
+  background: #FFFFFF !important;
+  border: 1.5px solid #DEE2E6 !important;
+  color: #1A1A2E !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.form-control:focus {
+  border-color: #B8860B !important;
+  box-shadow: 0 0 0 3px rgba(184,134,11,0.14) !important;
+}
+
+.form-control::placeholder {
+  color: #ADB5BD !important;
+}
+
+/* Dark form controls (used inside booking widget on dark hero) */
+.form-control--dark {
+  background: rgba(255,255,255,0.10) !important;
+  border: 1.5px solid rgba(255,255,255,0.18) !important;
+  color: #FFFFFF !important;
+}
+
+.form-control--dark::placeholder {
+  color: rgba(255,255,255,0.35) !important;
+}
+
+.form-control--dark:focus {
+  border-color: #DAA520 !important;
+}
+
+textarea.form-control {
+  background: #FFFFFF !important;
+  color: #1A1A2E !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   12. ACCORDION / FAQ
+═══════════════════════════════════════════════════════════════ */
+
+.accordion-item {
+  background: #FFFFFF !important;
+  border: 1px solid #E9ECEF !important;
+  border-radius: 10px !important;
+  margin-bottom: 8px !important;
+  overflow: hidden;
+}
+
+.accordion-trigger {
+  background: #F8F9FA !important;
+  color: #1A1A2E !important;
+  font-weight: 600 !important;
+  font-size: 0.94rem !important;
+  padding: 1rem 1.2rem !important;
+  width: 100%;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.accordion-trigger:hover {
+  background: rgba(184,134,11,0.06) !important;
+  color: #B8860B !important;
+}
+
+.accordion-trigger.active,
+.accordion-trigger[aria-expanded="true"] {
+  background: rgba(184,134,11,0.08) !important;
+  color: #B8860B !important;
+}
+
+.accordion-trigger__icon {
+  color: #B8860B !important;
+  font-weight: 700 !important;
+}
+
+.accordion-body__inner {
+  background: #FFFFFF !important;
+  color: #2C3E50 !important;
+  font-size: 0.92rem !important;
+  line-height: 1.78 !important;
+  padding: 1rem 1.2rem !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   13. PROCESS STEPS (Visa, Packages)
+═══════════════════════════════════════════════════════════════ */
+
+.process-step {
+  background: #FFFFFF !important;
+  border: 1px solid #E9ECEF !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.process-step:hover {
+  border-color: #B8860B !important;
+  box-shadow: 0 6px 20px rgba(184,134,11,0.12) !important;
+  transform: translateY(-3px);
+}
+
+.step-num {
+  background: #B8860B !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   14. FILTER TABS (Packages, Blog, Flight)
+═══════════════════════════════════════════════════════════════ */
+
+.filter-tab {
+  background: #F8F9FA !important;
+  border: 1.5px solid #DEE2E6 !important;
+  color: #495057 !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.84rem !important;
+  font-weight: 500 !important;
+  padding: 8px 18px !important;
+  border-radius: 8px !important;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.filter-tab:hover {
+  background: rgba(184,134,11,0.08) !important;
+  border-color: #B8860B !important;
+  color: #B8860B !important;
+}
+
+.filter-tab.active {
+  background: #B8860B !important;
+  border-color: #B8860B !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   15. FOREX PAGE SPECIFIC
+═══════════════════════════════════════════════════════════════ */
+
+/* Currency cards */
+.currency-card {
+  background: #FFFFFF !important;
+  border: 1.5px solid #E9ECEF !important;
+  color: #1A1A2E !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+
+.currency-card:hover,
+.currency-card.selected {
+  background: #0D1B2A !important;
+  border-color: #B8860B !important;
+  color: #FFFFFF !important;
+}
+
+.currency-card__code { font-weight: 700; }
+.currency-card__rate { font-family: 'Playfair Display', serif; font-weight: 700; }
+
+/* Rates table */
+.rates-table {
+  background: #FFFFFF !important;
+  border: 1px solid #E9ECEF !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.rates-table thead {
+  background: #0D1B2A !important;
+}
+
+.rates-table thead th {
+  color: #FFFFFF !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  padding: 12px 16px !important;
+}
+
+.rates-table tbody tr {
+  background: #FFFFFF !important;
+  color: #1A1A2E !important;
+}
+
+.rates-table tbody tr:nth-child(even) {
+  background: #F8F9FA !important;
+}
+
+.rates-table tbody tr:hover td {
+  background: #FFFBF0 !important;
+  color: #1A1A2E !important;
+}
+
+.rates-table td {
+  color: #2C3E50 !important;
+  font-size: 0.88rem !important;
+  padding: 11px 16px !important;
+  border-bottom: 1px solid #F0F2F4 !important;
+}
+
+/* Converter card */
+.converter-card {
+  background: #0D1B2A !important;
+  border: 1px solid rgba(184,134,11,0.22) !important;
+  border-radius: 16px;
+  padding: 1.6rem;
+}
+
+.converter-card h3 {
+  color: #FFFFFF !important;
+}
+
+.converter-result {
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(184,134,11,0.22) !important;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.converter-amount {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #DAA520 !important;
+}
+
+.converter-note {
+  color: rgba(255,255,255,0.45) !important;
+  font-size: 0.70rem;
+}
+
+/* Chart card */
+.chart-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E9ECEF !important;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   16. FLIGHT PAGE — FILTER SIDEBAR
+═══════════════════════════════════════════════════════════════ */
+
+.filter-sidebar {
+  background: #FFFFFF !important;
+  border: 1px solid #E9ECEF !important;
+  border-radius: 14px;
+  padding: 1.4rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05) !important;
+}
+
+.filter-sidebar__title {
+  color: #1A1A2E !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid #B8860B;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-group__label {
+  color: #1A1A2E !important;
+  font-weight: 700 !important;
+  font-size: 0.82rem !important;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #E9ECEF;
+}
+
+.check-opt {
+  color: #2C3E50 !important;
+  font-size: 0.86rem !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.check-opt input[type="checkbox"] {
+  accent-color: #B8860B;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   17. BLOG SIDEBAR
+═══════════════════════════════════════════════════════════════ */
+
+.sidebar-widget {
+  background: #FFFFFF !important;
+  border: 1px solid #E9ECEF !important;
+  border-radius: 12px;
+  padding: 1.4rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+  margin-bottom: 1.2rem;
+}
+
+.sidebar-title {
+  color: #1A1A2E !important;
+  font-weight: 700 !important;
+  font-size: 0.92rem !important;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #B8860B;
+  display: block;
+}
+
+.recent-post__title {
+  color: #1A1A2E !important;
+  font-size: 0.84rem !important;
+  font-weight: 500 !important;
+  line-height: 1.4;
+}
+
+.recent-post__date {
+  color: #ADB5BD !important;
+  font-size: 0.72rem !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   18. WHY CHOOSE US (on white bg — text was white on white)
+═══════════════════════════════════════════════════════════════ */
+
+/* Fix any inline styles or overrides causing white text on white bg */
+.section:not(.section-dark):not(.cta-section):not([style*="background:#"]):not([style*="background: #"]) h2,
+.section:not(.section-dark):not(.cta-section):not([style*="background:#"]):not([style*="background: #"]) h3,
+.section:not(.section-dark):not(.cta-section):not([style*="background:#"]):not([style*="background: #"]) h4 {
+  color: #1A1A2E !important;
+}
+
+.section:not(.section-dark):not(.cta-section):not([style*="background:#"]):not([style*="background: #"]) p,
+.section:not(.section-dark):not(.cta-section):not([style*="background:#"]):not([style*="background: #"]) li {
+  color: #2C3E50 !important;
+}
+
+/* Specific "Why Choose Us" fix */
+[style*="color: rgba(255,255,255"] {
+  /* This catches inline white text in light sections */
+}
+
+/* Trust badges on white bg */
+.trust-badge {
+  background: #F8F9FA !important;
+  border: 1px solid #E9ECEF !important;
+  color: #2C3E50 !important;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 40px;
+  font-size: 0.78rem;
+}
+
+.trust-badge__icon { color: #B8860B; }
+
+/* ═══════════════════════════════════════════════════════════════
+   19. URGENCY + BADGE ELEMENTS
+═══════════════════════════════════════════════════════════════ */
+
+.urgency-pill {
+  background: rgba(231,76,60,0.08) !important;
+  border: 1px solid rgba(231,76,60,0.20) !important;
+  color: #C0392B !important;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.urgency-dot {
+  width: 6px; height: 6px;
+  background: #E74C3C;
+  border-radius: 50%;
+  display: inline-block;
+  animation: blink 1.2s step-end infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   20. PARTNER LOGOS
+═══════════════════════════════════════════════════════════════ */
+
+.partner-logo {
+  background: #FFFFFF !important;
+  border: 1.5px solid #E9ECEF !important;
+  color: #5D6D7E !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  padding: 10px 22px !important;
+  border-radius: 8px !important;
+  transition: all 0.22s ease;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05) !important;
+}
+
+.partner-logo:hover {
+  border-color: #B8860B !important;
+  color: #B8860B !important;
+  background: rgba(184,134,11,0.05) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   21. SECTIONS THAT SHOULD STAY DARK (whitelist)
+═══════════════════════════════════════════════════════════════ */
+
+/* Hero — intentionally dark */
+.hero, .page-hero,
+.hero *, .page-hero * {
+  /* keep as-is — dark bg, white text is correct here */
+}
+
+.hero__title         { color: #FFFFFF !important; }
+.hero__desc          { color: rgba(255,255,255,0.78) !important; }
+.hero__tag           { color: rgba(255,255,255,0.85) !important; }
+.page-hero__title    { color: #FFFFFF !important; }
+.page-hero__subtitle { color: rgba(255,255,255,0.80) !important; }
+
+/* Stats bar — intentionally dark */
+.stats-bar  { background: linear-gradient(135deg, #0D1B2A, #1B2A3E) !important; }
+.stats-bar * { /* white text correct */ }
+.stat-item__number { color: #DAA520 !important; }
+.stat-item__label  { color: rgba(255,255,255,0.60) !important; }
+
+/* CTA section — intentionally dark */
+.cta-section { background: linear-gradient(135deg, #0D1B2A, #1B2A3E) !important; }
+.cta-section h2 { color: #FFFFFF !important; font-family: 'Playfair Display', serif !important; }
+.cta-section p  { color: rgba(255,255,255,0.72) !important; }
+
+/* Footer — intentionally dark */
+footer, #footer-container footer {
+  background: #0A1220 !important;
+}
+
+/* Topbar — intentionally dark */
+.topbar { background: #0D1B2A !important; }
+
+/* Sticky CTA — intentionally dark */
+.sticky-cta { background: #0D1B2A !important; border-top: 1px solid rgba(184,134,11,0.20) !important; }
+
+/* Section dark override */
+.section-dark {
+  background: linear-gradient(135deg, #0D1B2A, #1B2A3E) !important;
+  color: #FFFFFF !important;
+}
+
+.section-dark h1, .section-dark h2, .section-dark h3, .section-dark h4 {
+  color: #FFFFFF !important;
+}
+
+.section-dark p { color: rgba(255,255,255,0.72) !important; }
+
+/* ═══════════════════════════════════════════════════════════════
+   22. AMENITY CHIPS + SMALL ELEMENTS
+═══════════════════════════════════════════════════════════════ */
+
+.amenity-chip {
+  background: rgba(184,134,11,0.08) !important;
+  border: 1px solid rgba(184,134,11,0.18) !important;
+  color: #7A5C00 !important;
+  font-size: 0.68rem !important;
+  font-weight: 600 !important;
+  padding: 3px 9px !important;
+  border-radius: 40px !important;
+}
+
+.badge--gold {
+  background: #B8860B !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+.badge--blue   { background: #1565C0 !important; color: #FFFFFF !important; }
+.badge--green  { background: #1B8A5A !important; color: #FFFFFF !important; }
+
+/* ═══════════════════════════════════════════════════════════════
+   23. RESPONSIVE — MOBILE TEXT FIXES
+═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .section-title { font-size: 1.6rem !important; }
+  .section-desc  { font-size: 0.92rem !important; }
+  .service-card__title { font-size: 0.92rem !important; }
+  .service-card  { padding: 1.4rem !important; }
+  .testi-card    { padding: 1.3rem !important; }
+  .blog-title    { font-size: 0.95rem !important; }
+  .filter-tab    { font-size: 0.78rem !important; padding: 6px 12px !important; }
+}
+
+/* ── TRUST BADGE WITH REAL LOGOS ─────────────────────────────── */
+.trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #FFFFFF;
+  border: 1.5px solid #E9ECEF;
+  border-radius: 10px;
+  padding: 8px 16px 8px 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.trust-badge:hover {
+  border-color: #B8860B;
+  box-shadow: 0 4px 16px rgba(184,134,11,0.15);
+  transform: translateY(-2px);
+}
+
+.trust-badge__logo {
+  height: 36px;
+  width: auto;
+  max-width: 80px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.trust-badge__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.trust-badge__name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #1A1A2E;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.trust-badge__sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.60rem;
+  color: #8E9BAB;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .trust-badges { gap: 0.6rem; }
+  .trust-badge  { padding: 6px 12px 6px 8px; }
+  .trust-badge__logo { height: 28px; }
+}

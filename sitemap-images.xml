@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.alkhalistravels.com/</loc>
+    <image:image><image:loc>https://www.alkhalistravels.com/assets/og-home.jpg</image:loc><image:title>Al Khalis Tours and Travels Mumbai</image:title></image:image>
+    <image:image><image:loc>https://www.alkhalistravels.com/assets/logo.png</image:loc><image:title>Al Khalis Travels Logo</image:title></image:image>
+    <image:image><image:loc>https://www.alkhalistravels.com/assets/hero-bg.jpg</image:loc><image:title>Travel Agency Mumbai Hero</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/hajj.html</loc>
+    <image:image><image:loc>https://www.alkhalistravels.com/assets/og-hajj.jpg</image:loc><image:title>Hajj Umrah Packages Mumbai 2025</image:title></image:image>
+    <image:image><image:loc>https://www.alkhalistravels.com/assets/makkah-hotel.jpg</image:loc><image:title>Haram Facing Hotel Makkah</image:title></image:image>
+    <image:image><image:loc>https://www.alkhalistravels.com/assets/madinah-hotel.jpg</image:loc><image:title>Madinah Hotel Near Nabawi</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/packages.html</loc>
+    <image:image><image:loc>https://www.alkhalistravels.com/assets/dubai-package.jpg</image:loc><image:title>Dubai Tour Package Mumbai</image:title></image:image>
+    <image:image><image:loc>https://www.alkhalistravels.com/assets/bali-package.jpg</image:loc><image:title>Bali Honeymoon Package</image:title></image:image>
+    <image:image><image:loc>https://www.alkhalistravels.com/assets/europe-package.jpg</image:loc><image:title>Europe Grand Tour Package</image:title></image:image>
+  </url>
+</urlset>

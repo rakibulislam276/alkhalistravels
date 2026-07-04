@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xsi:schemaLocation="
+    http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- ══ HOME — Priority 1.0 ══ -->
+  <url>
+    <loc>https://www.alkhalistravels.com/</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/"/>
+    <image:image>
+      <image:loc>https://www.alkhalistravels.com/assets/og-home.jpg</image:loc>
+      <image:title>Al Khalis Tours and Travels — Mumbai's Trusted Travel Agency</image:title>
+      <image:caption>Mumbai's most trusted travel agency since 2005. Flights, Visa, Hajj &amp; Umrah, Hotels, Forex.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ══ FLIGHTS — Priority 0.95 ══ -->
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/flight.html</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/flight.html"/>
+    <image:image>
+      <image:loc>https://www.alkhalistravels.com/assets/og-flights.jpg</image:loc>
+      <image:title>Cheap Flight Booking from Mumbai — Al Khalis Travels</image:title>
+      <image:caption>Compare 200+ airlines. Domestic &amp; international flights at guaranteed lowest fares.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ══ VISA — Priority 0.95 ══ -->
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/visa.html</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/visa.html"/>
+    <image:image>
+      <image:loc>https://www.alkhalistravels.com/assets/og-visa.jpg</image:loc>
+      <image:title>Visa Services Mumbai — 98% Approval Rate</image:title>
+      <image:caption>Expert visa assistance for UAE, UK, USA, Schengen, Saudi Arabia &amp; 50+ countries.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ══ HAJJ & UMRAH — Priority 0.95 ══ -->
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/hajj.html</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/hajj.html"/>
+    <image:image>
+      <image:loc>https://www.alkhalistravels.com/assets/og-hajj.jpg</image:loc>
+      <image:title>Hajj &amp; Umrah Packages 2025 from Mumbai — Ministry Approved</image:title>
+      <image:caption>Ministry approved. Packages from ₹72,000. Direct flights, Haram hotels, Ziyarat. Hajj 2026 open.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ══ PACKAGES — Priority 0.90 ══ -->
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/packages.html</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/packages.html"/>
+    <image:image>
+      <image:loc>https://www.alkhalistravels.com/assets/og-packages.jpg</image:loc>
+      <image:title>Holiday Tour Packages from Mumbai 2025</image:title>
+      <image:caption>Dubai, Europe, Singapore, Bali, Maldives, Kashmir — group, honeymoon &amp; custom packages.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ══ HOTEL — Priority 0.85 ══ -->
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/hotel.html</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/hotel.html"/>
+    <image:image>
+      <image:loc>https://www.alkhalistravels.com/assets/og-hotel.jpg</image:loc>
+      <image:title>Hotel Booking Worldwide — Best Rates Guaranteed</image:title>
+      <image:caption>Handpicked hotels budget to luxury. Haram-facing hotels for Umrah. 50+ destinations.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ══ FOREX — Priority 0.85 ══ -->
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/forex.html</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/forex.html"/>
+    <image:image>
+      <image:loc>https://www.alkhalistravels.com/assets/og-forex.jpg</image:loc>
+      <image:title>Best Forex Exchange Rates in Mumbai — RBI Authorized</image:title>
+      <image:caption>RBI authorized. Best rates for USD, EUR, GBP, AED, SAR &amp; 20+ currencies. Doorstep delivery.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ══ CONTACT — Priority 0.80 ══ -->
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/contact.html</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/contact.html"/>
+    <image:image>
+      <image:loc>https://www.alkhalistravels.com/assets/og-contact.jpg</image:loc>
+      <image:title>Contact Al Khalis Tours — Saki Naka &amp; Mira Road Mumbai</image:title>
+      <image:caption>Two offices in Mumbai. Call +91 98929 60023. Mon–Sat 10AM–7PM.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ══ ABOUT — Priority 0.70 ══ -->
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/about.html</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/about.html"/>
+    <image:image>
+      <image:loc>https://www.alkhalistravels.com/assets/og-about.jpg</image:loc>
+      <image:title>About Al Khalis Tours — 20 Years of Trusted Travel</image:title>
+      <image:caption>Founded 2005. IATA certified. TAAI member. Ministry approved. 15,000+ clients.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ══ BLOG — Priority 0.65 ══ -->
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/blog.html</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/blog.html"/>
+    <image:image>
+      <image:loc>https://www.alkhalistravels.com/assets/og-blog.jpg</image:loc>
+      <image:title>Travel News &amp; Blog — Al Khalis Travels</image:title>
+      <image:caption>Visa tips, Umrah guides, destination advice and forex tips for Indian travellers.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ══ BLOG POSTS ══ -->
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/blog/umrah-guide-2025.html</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/blog/dubai-budget-guide.html</loc>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/blog/schengen-visa-2025.html</loc>
+    <lastmod>2025-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
+</urlset>

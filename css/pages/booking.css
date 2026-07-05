@@ -92,7 +92,7 @@
   background: rgba(201,168,76,0.08);
 }
 
-.bw-tab-icon { font-size: 1.1rem; }
+.bw-tab-icon { font-size: 1.1rem; display: none; }
 
 /* ── PANEL ────────────────────────────────────────────────────── */
 .bw-panel { padding: 1.4rem 1.4rem 1rem; }
@@ -780,7 +780,7 @@
   .bw-panel { padding: 1rem; }
   .bw-tab   { font-size: 0.72rem; padding: 12px 6px; }
   .bw-tab-label { display: none; }
-  .bw-tab-icon  { font-size: 1.3rem; }
+  .bw-tab-icon  { display: inline; font-size: 1.3rem; }
 
   .bw-field, .bw-field--sm, .bw-field--grow, .bw-field--xl {
     flex-basis: 100%;

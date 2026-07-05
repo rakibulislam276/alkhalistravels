@@ -132,22 +132,22 @@ window.AlKhalis.Booking = {
       <!-- TAB BAR -->
       <div class="bw-tabs" role="tablist" aria-label="Booking type">
         <button class="bw-tab active" data-tab="flight"   role="tab" aria-selected="true"  onclick="AlKhalis.Booking.switchTab('flight')">
-          <span class="bw-tab-label">Flight</span>
+          <span class="bw-tab-icon">✈️</span><span class="bw-tab-label">Flight</span>
         </button>
         <button class="bw-tab" data-tab="hotel"    role="tab" aria-selected="false" onclick="AlKhalis.Booking.switchTab('hotel')">
-          <span class="bw-tab-icon"></span><span class="bw-tab-label">Hotel</span>
+          <span class="bw-tab-icon">🏨</span><span class="bw-tab-label">Hotel</span>
         </button>
         <button class="bw-tab" data-tab="packages" role="tab" aria-selected="false" onclick="AlKhalis.Booking.switchTab('packages')">
-          <span class="bw-tab-icon"></span><span class="bw-tab-label">Packages</span>
+          <span class="bw-tab-icon">🧳</span><span class="bw-tab-label">Packages</span>
         </button>
         <button class="bw-tab" data-tab="umrah"    role="tab" aria-selected="false" onclick="AlKhalis.Booking.switchTab('umrah')">
-          <span class="bw-tab-icon"></span><span class="bw-tab-label">Umrah</span>
+          <span class="bw-tab-icon">🕋</span><span class="bw-tab-label">Umrah</span>
         </button>
         <button class="bw-tab" data-tab="visa"     role="tab" aria-selected="false" onclick="AlKhalis.Booking.switchTab('visa')">
-          <span class="bw-tab-icon"></span><span class="bw-tab-label">Visa</span>
+          <span class="bw-tab-icon">🛂</span><span class="bw-tab-label">Visa</span>
         </button>
         <button class="bw-tab" data-tab="forex"    role="tab" aria-selected="false" onclick="AlKhalis.Booking.switchTab('forex')">
-          <span class="bw-tab-icon"></span><span class="bw-tab-label">Forex</span>
+          <span class="bw-tab-icon">💱</span><span class="bw-tab-label">Forex</span>
         </button>
       </div>
 

@@ -5,7 +5,8 @@
 /* ── TOPBAR ───────────────────────────────────────────────────── */
 .topbar {
   background: var(--navy);
-  padding: 6px var(--space-6);
+  height: 34px;
+  padding: 0 var(--space-6);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -96,15 +97,17 @@
 /* ── NAVBAR ───────────────────────────────────────────────────── */
 #navbar {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 34px; left: 0; right: 0;
   z-index: var(--z-nav);
   transition: background var(--t-slow) var(--ease),
               box-shadow var(--t-slow) var(--ease),
+              top var(--t-base) var(--ease),
               padding var(--t-base) var(--ease);
   padding: 0 var(--space-6);
 }
 
 #navbar.scrolled {
+  top: 0;
   background: rgba(10,22,40,0.97);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -643,7 +646,9 @@ footer {
   .nav-links  { display: none; }
   .hamburger  { display: flex; }
   /* On mobile: show only phone numbers, hide email & hours */
-  .topbar { padding: 5px 1rem; }
+  .topbar { height: 30px; padding: 0 1rem; }
+  #navbar { top: 30px; }
+  #navbar.scrolled { top: 0; }
   .topbar__item--link[href^="mailto:"],
   .topbar__item:not(.topbar__item--link),
   .topbar__right { display: none; }

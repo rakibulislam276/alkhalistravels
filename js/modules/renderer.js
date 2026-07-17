@@ -218,7 +218,7 @@ window.AlKhalis.Renderer = {
           <p class="blog-excerpt">${p.excerpt}</p>
           <div class="blog-footer">
             <div class="blog-tags">${p.tags.map(t=>`<span class="blog-tag">${t}</span>`).join('')}</div>
-            <a href="#" class="btn btn--outline btn--sm">Read More →</a>
+            <a href="${p.url || '#'}" class="btn btn--outline btn--sm"${p.url ? '' : ' style="opacity:0.45;pointer-events:none"'}>Read More →</a>
           </div>
         </div>
       </article>`).join('');

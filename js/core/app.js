@@ -26,7 +26,7 @@ const App = {
 
   detectRoot() {
     const path = window.location.pathname;
-    this.root = path.includes('/pages/') ? '../' : './';
+    this.root = path.includes('/pages/blog/') ? '../../' : (path.includes('/pages/') ? '../' : './');
     window.SITE_ROOT = this.root;
   },
 

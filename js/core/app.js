@@ -393,6 +393,9 @@ const App = {
     };
     observe();
     setTimeout(observe, 300);
+    setTimeout(observe, 900); /* safety net for late-rendered content */
+    window.AlKhalis = window.AlKhalis || {};
+    window.AlKhalis.refreshReveals = observe;
   },
 
   /* ── COUNTERS ──────────────────────────────────────────────── */

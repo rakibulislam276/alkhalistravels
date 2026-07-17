@@ -325,5 +325,8 @@ window.AlKhalis.Renderer = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => window.AlKhalis.Renderer.init(), 350);
+  setTimeout(() => {
+    window.AlKhalis.Renderer.init();
+    if (window.AlKhalis.refreshReveals) window.AlKhalis.refreshReveals();
+  }, 350);
 });

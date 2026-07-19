@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- HOME -->
+  <url>
+    <loc>https://www.alkhalistravels.com/</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/"/>
+  </url>
+
+  <!-- CORE SERVICES -->
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/flight.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/flight.html"/>
+  </url>
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/visa.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/visa.html"/>
+  </url>
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/hajj.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/hajj.html"/>
+  </url>
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/packages.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/packages.html"/>
+  </url>
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/hotel.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/hotel.html"/>
+  </url>
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/forex.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/forex.html"/>
+  </url>
+
+  <!-- COMPANY -->
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/about.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/about.html"/>
+  </url>
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/contact.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/contact.html"/>
+  </url>
+
+  <!-- BLOG INDEX -->
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/blog.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/blog.html"/>
+  </url>
+
+  <!-- BLOG ARTICLES -->
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/blog/umrah-guide-2025.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/blog/umrah-guide-2025.html"/>
+  </url>
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/blog/dubai-budget-guide.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/blog/dubai-budget-guide.html"/>
+  </url>
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/blog/schengen-visa-2025.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/blog/schengen-visa-2025.html"/>
+  </url>
+</urlset>

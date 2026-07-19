@@ -1010,3 +1010,19 @@ img, svg, video { max-width: 100%; }
   /* Destinations: one comfortable column on small phones */
   .destinations-img-grid { grid-template-columns: 1fr !important; }
 }
+
+/* ── Sticky CTA bar: three buttons must fit a 360px screen ────── */
+@media (max-width: 480px) {
+  .sticky-cta { padding: 9px 8px; }
+  .sticky-cta__actions { width: 100%; justify-content: center; gap: 6px; }
+  .sticky-cta__actions .btn,
+  .sticky-cta__actions .btn--lg { padding: 10px 11px; font-size: 0.76rem; white-space: nowrap; }
+}
+
+/* ── Footer containment guard: no grid column may inflate past
+      the screen from an item's intrinsic width ────────────────── */
+@media (max-width: 768px) {
+  .footer-grid > * { min-width: 0; max-width: 100%; }
+  .footer-certs, .footer-certs img { max-width: 100%; }
+  footer { overflow-x: clip; }
+}

@@ -202,10 +202,13 @@ window.AlKhalis.Renderer = {
     const wrap = document.getElementById('blog-posts');
     if (!wrap || !this.D.blogPosts) return;
     const bgs = ['linear-gradient(135deg,#1a0533,#3d0c02)','linear-gradient(135deg,#1a1a2e,#0f3460)','linear-gradient(135deg,#0f3460,#533483)','linear-gradient(135deg,#1a472a,#2d6a4f)','linear-gradient(135deg,#8B6914,#C9A84C)'];
+    const prefix = window.location.pathname.includes('/pages/') ? '../' : '';
     wrap.innerHTML = this.D.blogPosts.map((p,i) => `
       <article class="blog-card reveal">
-        <div class="blog-card__img" style="background:${bgs[i%bgs.length]}" role="img" aria-label="${p.title}">
-          ${p.emoji}
+        <div class="blog-card__img" style="${p.img
+          ? `background:url('${prefix}${p.img}') center/cover no-repeat`
+          : `background:${bgs[i%bgs.length]}`}" role="img" aria-label="${p.title}">
+          ${p.img ? '' : p.emoji}
           <span class="badge badge--${p.catType}" style="position:absolute;top:1rem;left:1rem">${p.cat}</span>
         </div>
         <div class="blog-card__body">

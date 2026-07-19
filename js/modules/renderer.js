@@ -298,17 +298,13 @@ window.AlKhalis.Renderer = {
 
   /* ── PARTNERS — real logos ──────────────────────────────────── */
   renderPartners() {
-    const wrap = document.getElementById('partners-grid');
-    if (!wrap || !this.D.partners) return;
-    const isSubPage = window.location.pathname.includes('/pages/');
-    const prefix = isSubPage ? '../' : '';
-    wrap.className = 'pkg-grid reveal-group';
-    wrap.innerHTML = this.D.partners.map(p => `
-      <div class="partner-card" role="listitem" title="${p.name}">
-        <img class="partner-card__logo" src="${prefix}${p.img}" alt="${p.name} logo"
-             loading="lazy" onerror="this.style.opacity='0.2'">
-        <span class="partner-card__name">${p.name}</span>
-      </div>`).join('');
+    /* Intentionally disabled. The partners section is rendered by the
+       inline script in index.html (22 airlines, .partners-grid compact
+       layout). This function used to overwrite it 350ms later with a
+       .pkg-grid reveal-group version, whose reveal CSS only supports 8
+       children — hiding partners 9-22. Do not re-enable without also
+       removing the inline renderer and extending the reveal rules. */
+    return;
   },
 
   /* ── POPULAR ROUTES ─────────────────────────────────────────── */

@@ -943,3 +943,70 @@ footer, #footer-container footer {
   .trust-badge  { padding: 6px 12px 6px 8px; }
   .trust-badge__logo { height: 28px; }
 }
+
+/* ================================================================
+   MOBILE RESPONSIVE FIXES (July 2026)
+   Loaded last on every page — targeted overrides only.
+   ================================================================ */
+
+/* 1) Kill horizontal page scroll (white strip on the right).
+      Oversized decorative glows + overflowing rows were widening
+      the page; clip guarantees the viewport is the ceiling. */
+html, body { overflow-x: clip; max-width: 100%; }
+img, svg, video { max-width: 100%; }
+
+/* 2) Destination cards: pages.css gives aspect-ratio 3/4 while
+      homepage-sections-fix.css gives height 280px. Together they
+      force a fixed 210px width that ignores the grid column —
+      cards overflowed and visually overlapped. Let the column
+      decide the width; aspect-ratio keeps the shape. */
+.dest-card { height: auto !important; width: 100%; }
+
+@media (max-width: 768px) {
+
+  /* 3) Topbar: two phone numbers only, one clean line.
+        Email, WhatsApp, hours and the offers ticker overflowed
+        the viewport and hid behind / under the navbar. */
+  .topbar { height: 30px; padding: 0 0.9rem; overflow: hidden; justify-content: flex-start; gap: 12px; }
+  .topbar__right { display: none !important; }
+  .topbar__sep { display: none !important; }
+  .topbar a[href^="mailto:"] { display: none !important; }
+  .topbar a[href*="wa.me"] { display: none !important; }
+
+  /* 4) Mobile menu: start below the navbar instead of centering
+        under the logo, scroll when taller than the screen, and
+        tighten the type so all items are visible and aligned. */
+  .mobile-nav {
+    justify-content: flex-start;
+    padding: 104px 1.5rem 40px;
+    overflow-y: auto;
+    gap: 0;
+  }
+  .mobile-nav a {
+    font-size: 1.3rem;
+    padding: 0.6rem 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 5) "Why Choose Us" and any other inline two-column grid:
+        single column on mobile (inline styles need !important). */
+  .container > div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2.2rem !important;
+  }
+
+  /* 6) Footer newsletter: input shrinks inside the row instead of
+        pushing the arrow button off the card edge. */
+  .newsletter-form { width: 100%; max-width: 100%; }
+  .newsletter-form input { flex: 1 1 auto; min-width: 0; width: auto; }
+  .newsletter-form button { flex: 0 0 auto; }
+
+  /* Booking widget can never exceed the screen */
+  .booking-widget-wrap, #booking-widget { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  /* Destinations: one comfortable column on small phones */
+  .destinations-img-grid { grid-template-columns: 1fr !important; }
+}

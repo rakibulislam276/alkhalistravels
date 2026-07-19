@@ -312,7 +312,7 @@ const App = {
     <span>
       <a href="${r}pages/about.html">About</a> &nbsp;·&nbsp;
       <a href="${r}pages/contact.html">Contact</a> &nbsp;·&nbsp;
-      <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="${r}pages/privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
       Developed by Rakibul Islam Salafi
     </span>
   </div>

@@ -110,4 +110,18 @@
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/privacy.html"/>
   </url>
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/blog/family-destinations.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/blog/family-destinations.html"/>
+  </url>
+  <url>
+    <loc>https://www.alkhalistravels.com/pages/blog/forex-tips.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.alkhalistravels.com/pages/blog/forex-tips.html"/>
+  </url>
 </urlset>

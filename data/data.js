@@ -347,10 +347,10 @@ window.AlKhalis.Data = {
 
   /* ── TEAM ─────────────────────────────────────────────────── */
   team: [
-    { initial:'M', name:'Mohammed Khalis', role:'Founder & Director',         desc:'20+ years in travel industry. Specialist in Hajj & Umrah operations.' },
+    { initial:'M', name:'Rakibul Islam', role:'Founder & Director',         desc:'20+ years in travel industry. Specialist in Hajj & Umrah operations.' },
     { initial:'A', name:'Ahmed Shaikh',    role:'Head of Flight Operations',   desc:'15 years in ticketing and airline partnerships across 200+ carriers.' },
-    { initial:'F', name:'Fatima Ansari',   role:'Visa Processing Expert',      desc:'Specialist in Schengen, UK, USA, Middle East visa processing.' },
-    { initial:'H', name:'Haji Abdul Rahman',role:'Hajj & Umrah Coordinator',  desc:'Licensed religious guide who has led hundreds of pilgrimage groups.' },
+    { initial:'F', name:'Khan Farheen Iqbal',   role:'Visa Processing Expert',      desc:'Specialist in Schengen, UK, USA, Middle East visa processing.' },
+    { initial:'H', name:'Safiur Rahman',role:'Hajj & Umrah Coordinator',  desc:'Licensed religious guide who has led hundreds of pilgrimage groups.' },
   ],
 
 /* ================================================================

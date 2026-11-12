@@ -41,7 +41,7 @@ const App = {
   buildNav() {
     const r = this.root;
     const pages = [
-      { href: r + 'index.html',          label: 'Home' },
+      { href: '/',                     label: 'Home' },
       { href: r + 'pages/flight.html',   label: 'Flight' },
       { href: r + 'pages/visa.html',     label: 'Visa' },
       { href: r + 'pages/hotel.html',    label: 'Hotel' },
@@ -139,7 +139,7 @@ const App = {
 <!-- Navbar -->
 <nav id="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <a class="nav-logo" href="${r}index.html" aria-label="Al Khalis Tours Home">
+    <a class="nav-logo" href="/" aria-label="Al Khalis Tours Home">
       <img class="nav-logo__img" src="${r}assets/logo-wide-rgba.png" alt="Al Khalis Tours and Travels" loading="eager">
     </a>
     <ul class="nav-links" role="list">${navLinks}
@@ -214,7 +214,7 @@ const App = {
       </div>
       <div class="footer-contact-row">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:#B8860B;flex-shrink:0"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-        <span>Shop No. 10, Opp. Mira Road Railway Station, Mira Road East — 401107</span>
+        <span>Office No. 30, 1st Floor, Crystal Plaza, Opp. Mira Road Railway Station, Mira Road East — 401107</span>
       </div>
       <div class="footer-contact-row">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:#B8860B;flex-shrink:0"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
@@ -231,7 +231,7 @@ const App = {
     <div>
       <h4 class="footer-heading">Quick Links</h4>
       <ul class="footer-links">
-        <li><a href="${r}index.html">› Home</a></li>
+        <li><a href="/">› Home</a></li>
         <li><a href="${r}pages/about.html">› About Us</a></li>
         <li><a href="${r}pages/flight.html">› Flight Booking</a></li>
         <li><a href="${r}pages/visa.html">› Visa Services</a></li>
@@ -486,7 +486,7 @@ const App = {
     setTimeout(() => {
       const current = window.location.pathname.split('/').pop() || 'index.html';
       document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(link => {
-        const href = (link.getAttribute('href') || '').split('/').pop();
+        const href = (link.getAttribute('href') || '').split('/').pop() || 'index.html';
         if (href === current || (current === '' && href === 'index.html')) link.classList.add('active');
       });
     }, 100);

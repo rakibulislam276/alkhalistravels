@@ -2,21 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://www.alkhalistravels.com/</loc>
-    <image:image><image:loc>https://www.alkhalistravels.com/assets/og-home.jpg</image:loc><image:title>Al Khalis Tours and Travels Mumbai</image:title></image:image>
-    <image:image><image:loc>https://www.alkhalistravels.com/assets/logo.png</image:loc><image:title>Al Khalis Travels Logo</image:title></image:image>
-    <image:image><image:loc>https://www.alkhalistravels.com/assets/hero-bg.jpg</image:loc><image:title>Travel Agency Mumbai Hero</image:title></image:image>
+    <loc>https://alkhalistravels.com/</loc>
+    <image:image><image:loc>https://alkhalistravels.com/assets/og-home.jpg</image:loc></image:image>
+    <image:image><image:loc>https://alkhalistravels.com/assets/images/hero-home.jpg</image:loc></image:image>
+    <image:image><image:loc>https://alkhalistravels.com/assets/logo-og.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.alkhalistravels.com/pages/hajj.html</loc>
-    <image:image><image:loc>https://www.alkhalistravels.com/assets/og-hajj.jpg</image:loc><image:title>Hajj Umrah Packages Mumbai 2025</image:title></image:image>
-    <image:image><image:loc>https://www.alkhalistravels.com/assets/makkah-hotel.jpg</image:loc><image:title>Haram Facing Hotel Makkah</image:title></image:image>
-    <image:image><image:loc>https://www.alkhalistravels.com/assets/madinah-hotel.jpg</image:loc><image:title>Madinah Hotel Near Nabawi</image:title></image:image>
+    <loc>https://alkhalistravels.com/pages/hajj.html</loc>
+    <image:image><image:loc>https://alkhalistravels.com/assets/og-hajj.jpg</image:loc></image:image>
+    <image:image><image:loc>https://alkhalistravels.com/assets/images/hero-hajj.jpg</image:loc></image:image>
+    <image:image><image:loc>https://alkhalistravels.com/assets/images/dest-makkah.jpg</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.alkhalistravels.com/pages/packages.html</loc>
-    <image:image><image:loc>https://www.alkhalistravels.com/assets/dubai-package.jpg</image:loc><image:title>Dubai Tour Package Mumbai</image:title></image:image>
-    <image:image><image:loc>https://www.alkhalistravels.com/assets/bali-package.jpg</image:loc><image:title>Bali Honeymoon Package</image:title></image:image>
-    <image:image><image:loc>https://www.alkhalistravels.com/assets/europe-package.jpg</image:loc><image:title>Europe Grand Tour Package</image:title></image:image>
+    <loc>https://alkhalistravels.com/pages/packages.html</loc>
+    <image:image><image:loc>https://alkhalistravels.com/assets/og-packages.jpg</image:loc></image:image>
+    <image:image><image:loc>https://alkhalistravels.com/assets/images/dest-dubai.jpg</image:loc></image:image>
+    <image:image><image:loc>https://alkhalistravels.com/assets/images/dest-singapore.jpg</image:loc></image:image>
+    <image:image><image:loc>https://alkhalistravels.com/assets/images/dest-paris.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://alkhalistravels.com/pages/flight.html</loc>
+    <image:image><image:loc>https://alkhalistravels.com/assets/og-flights.jpg</image:loc></image:image>
+    <image:image><image:loc>https://alkhalistravels.com/assets/images/hero-flight.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://alkhalistravels.com/pages/visa.html</loc>
+    <image:image><image:loc>https://alkhalistravels.com/assets/og-visa.jpg</image:loc></image:image>
+    <image:image><image:loc>https://alkhalistravels.com/assets/images/hero-visa.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://alkhalistravels.com/pages/hotel.html</loc>
+    <image:image><image:loc>https://alkhalistravels.com/assets/og-hotel.jpg</image:loc></image:image>
+    <image:image><image:loc>https://alkhalistravels.com/assets/images/hero-hotel.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://alkhalistravels.com/pages/forex.html</loc>
+    <image:image><image:loc>https://alkhalistravels.com/assets/og-forex.jpg</image:loc></image:image>
+    <image:image><image:loc>https://alkhalistravels.com/assets/images/hero-forex.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://alkhalistravels.com/pages/about.html</loc>
+    <image:image><image:loc>https://alkhalistravels.com/assets/og-about.jpg</image:loc></image:image>
+    <image:image><image:loc>https://alkhalistravels.com/assets/images/team-founder.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://alkhalistravels.com/pages/blog/umrah-guide-2025.html</loc>
+    <image:image><image:loc>https://alkhalistravels.com/assets/images/blog-umrah.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://alkhalistravels.com/pages/blog/dubai-budget-guide.html</loc>
+    <image:image><image:loc>https://alkhalistravels.com/assets/images/blog-dubai.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://alkhalistravels.com/pages/blog/schengen-visa-2025.html</loc>
+    <image:image><image:loc>https://alkhalistravels.com/assets/images/blog-visa.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://alkhalistravels.com/pages/blog/forex-tips.html</loc>
+    <image:image><image:loc>https://alkhalistravels.com/assets/images/blog-forex.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://alkhalistravels.com/pages/blog/family-destinations.html</loc>
+    <image:image><image:loc>https://alkhalistravels.com/assets/images/blog-family.jpg</image:loc></image:image>
   </url>
 </urlset>

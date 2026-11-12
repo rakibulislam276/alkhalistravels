@@ -41,7 +41,7 @@ const App = {
   buildNav() {
     const r = this.root;
     const pages = [
-      { href: r + 'index.html',          label: 'Home' },
+      { href: '/',                     label: 'Home' },
       { href: r + 'pages/flight.html',   label: 'Flight' },
       { href: r + 'pages/visa.html',     label: 'Visa' },
       { href: r + 'pages/hotel.html',    label: 'Hotel' },
@@ -139,7 +139,7 @@ const App = {
 <!-- Navbar -->
 <nav id="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <a class="nav-logo" href="${r}index.html" aria-label="Al Khalis Tours Home">
+    <a class="nav-logo" href="/" aria-label="Al Khalis Tours Home">
       <img class="nav-logo__img" src="${r}assets/logo-wide-rgba.png" alt="Al Khalis Tours and Travels" loading="eager">
     </a>
     <ul class="nav-links" role="list">${navLinks}
@@ -231,7 +231,7 @@ const App = {
     <div>
       <h4 class="footer-heading">Quick Links</h4>
       <ul class="footer-links">
-        <li><a href="${r}index.html">› Home</a></li>
+        <li><a href="/">› Home</a></li>
         <li><a href="${r}pages/about.html">› About Us</a></li>
         <li><a href="${r}pages/flight.html">› Flight Booking</a></li>
         <li><a href="${r}pages/visa.html">› Visa Services</a></li>
@@ -486,7 +486,7 @@ const App = {
     setTimeout(() => {
       const current = window.location.pathname.split('/').pop() || 'index.html';
       document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(link => {
-        const href = (link.getAttribute('href') || '').split('/').pop();
+        const href = (link.getAttribute('href') || '').split('/').pop() || 'index.html';
         if (href === current || (current === '' && href === 'index.html')) link.classList.add('active');
       });
     }, 100);

@@ -15,7 +15,7 @@ window.AlKhalis = window.AlKhalis || {};
 window.AlKhalis.Analytics = {
 
   config: {
-    GA4_ID:      'G-XXXXXXXXXX',   // ← Replace with your GA4 ID
+    GA4_ID:      'G-QNQ52WGCEB',
     FB_PIXEL_ID: '0000000000000',  // ← Replace with your Facebook Pixel ID
     debug:       false,            // Set true to log events to console
   },
@@ -23,7 +23,7 @@ window.AlKhalis.Analytics = {
   init() {
     this.loadGA4();
     this.loadFBPixel();
-    this.trackPageView();
+    // page_view is sent automatically by gtag('config'); a manual one would double-count.
     this.bindAutoEvents();
     if (this.config.debug) console.info('%c📊 AlKhalis Analytics ready', 'color:#C9A84C;font-weight:700');
   },

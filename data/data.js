@@ -19,7 +19,7 @@ window.AlKhalis.Data = {
     website: 'www.alkhalistravels.com',
     whatsapp:'https://wa.me/919892960023',
     head_office:   'Vaikunth Nadekar Chawl, 02, 90 Feet Rd, Saki Naka, Mumbai — 400072',
-    branch_office: 'Shop No. 10, Opp. Mira Road Railway Station, Mira Road East — 401107',
+    branch_office: 'Office No. 30, 1st Floor, Crystal Plaza, Opp. Mira Road Railway Station, Mira Road East — 401107',
     hours:   'Mon–Fri: 10AM–7PM · Saturday: 10AM–5PM',
     founded: 2005,
   },
@@ -301,7 +301,7 @@ window.AlKhalis.Data = {
   /* ── FAQ DATA ─────────────────────────────────────────────── */
   faqs: {
     general: [
-      { q:'Where are your offices in Mumbai?',          a:'We have two offices: Head Office at Vaikunth Nadekar Chawl, Saki Naka, Mumbai 400072, and Branch Office at Shop No. 10, opposite Mira Road Railway Station, Mira Bhayandar 401107.' },
+      { q:'Where are your offices in Mumbai?',          a:'We have two offices: Head Office at Vaikunth Nadekar Chawl, Saki Naka, Mumbai 400072, and Branch Office at Office No. 30, 1st Floor, Crystal Plaza, opposite Mira Road Railway Station, Mira Road East, Mira Bhayandar 401107.' },
       { q:'What are your business hours?',              a:'Monday to Friday: 10:00 AM – 7:00 PM. Saturday: 10:00 AM – 5:00 PM. Sundays by appointment only.' },
       { q:'Do you offer doorstep service?',             a:'Yes! We offer doorstep delivery for visa documents and forex currency within Mumbai. WhatsApp us at +91 98929 60023 to arrange.' },
       { q:'Are you IATA certified?',                    a:'Yes. Al Khalis Tours and Travels is IATA certified and a proud member of TAAI (Travel Agents Association of India).' },

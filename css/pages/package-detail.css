@@ -255,3 +255,35 @@
   .pd-tabs, .pd-mbar, .pd-side, .pd-related { display: none !important; }
   .pd-day { break-inside: avoid; }
 }
+
+/* ── DARK MODE (html[data-theme="dark"], set by the theme script) ── */
+html[data-theme="dark"] .pd-page {
+  --pd-text: #C9D2DE;
+  --pd-muted: #A9B4C4;
+  --pd-line: rgba(201,168,76,.16);
+  --pd-soft: #0E1828;
+  --pd-card: #111C2E;
+  background: #0A1220;
+}
+html[data-theme="dark"] .pd-fact,
+html[data-theme="dark"] .pd-fact--price strong,
+html[data-theme="dark"] .pd-sec h2,
+html[data-theme="dark"] .pd-sec h3,
+html[data-theme="dark"] .pd-day__title,
+html[data-theme="dark"] .pd-faq summary,
+html[data-theme="dark"] .pd-card__price strong,
+html[data-theme="dark"] .pd-related h2,
+html[data-theme="dark"] .pd-rel__name,
+html[data-theme="dark"] .pd-rel__price,
+html[data-theme="dark"] .pd-pn a,
+html[data-theme="dark"] .pd-btn--ghost { color: #E9EDF3 !important; }
+html[data-theme="dark"] .pd-day__num { background: #1A2840; }
+html[data-theme="dark"] .pd-day[open] .pd-day__num { background: var(--pd-gold); }
+html[data-theme="dark"] .pd-includes-row .pkg-inc { color: #E9EDF3 !important; }
+html[data-theme="dark"] .pd-meals li { color: #5FD39A; background: rgba(95,211,154,.1); }
+html[data-theme="dark"] .pd-card { box-shadow: 0 10px 30px rgba(0,0,0,.4); }
+html[data-theme="dark"] .pd-tabs a { color: #C9D2DE; }
+html[data-theme="dark"] .pd-tabs a:hover { color: #F4D03F; }
+html[data-theme="dark"] .pd-pn__all { background: #B8860B !important; }
+html[data-theme="dark"] .pd-mbar { background: #060D1B; }
+html[data-theme="dark"] .pd-page .pd-sec, html[data-theme="dark"] .pd-page .pd-sec__head, html[data-theme="dark"] .pd-page .pd-main { background: transparent !important; }

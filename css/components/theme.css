@@ -1,0 +1,734 @@
+/* ================================================================
+   THEME.CSS — Day / Night (light / dark) mode
+   Al Khalis Tours and Travels
+
+   How it works
+   - A tiny inline script in every page <head> sets
+     <html data-theme="light|dark"> before anything paints, using the
+     visitor's saved choice (localStorage "ak-theme") or, if none,
+     their system setting. So there is no white flash at night.
+   - js/core/app.js adds the sun/moon button to the navbar and saves
+     the choice when it is clicked.
+   - Light mode is the site exactly as before: nothing in this file
+     applies unless <html data-theme="dark">.
+   - Load this file LAST on every page (after color-fix.css).
+
+   Sections
+   1. Toggle button (both modes)
+   2. Dark palette tokens
+   3. GENERATED dark overrides — every rule in the site CSS that paints
+      a white/near-white surface, dark text or a light border, flipped
+      to the dark palette.
+   4. Hand-tuned dark rules (navbar, forms, logos, photos). Put new
+      dark-mode fixes here; they come last so they win.
+   ================================================================ */
+
+/* ── 1. TOGGLE BUTTON ─────────────────────────────────────────── */
+.theme-toggle {
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px;
+  flex-shrink: 0;
+  margin-left: 8px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.45);
+  background: rgba(255,255,255,0.08);
+  color: #F4D03F;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background .25s ease, border-color .25s ease, color .25s ease, transform .25s ease;
+}
+.theme-toggle:hover { background: rgba(201,168,76,0.18); border-color: #DAA520; transform: rotate(-12deg); }
+.theme-toggle:focus-visible { outline: 2px solid #DAA520; outline-offset: 2px; }
+.theme-toggle svg { width: 18px; height: 18px; display: block; }
+/* Show the moon in light mode (click = go dark), the sun in dark mode */
+.theme-toggle .theme-toggle__sun { display: none; }
+html[data-theme="dark"] .theme-toggle .theme-toggle__sun { display: block; }
+html[data-theme="dark"] .theme-toggle .theme-toggle__moon { display: none; }
+
+/* Scrolled (white) navbar in light mode: dark-on-light button */
+#navbar.scrolled .theme-toggle {
+  background: rgba(184,134,11,0.08);
+  border-color: rgba(184,134,11,0.40);
+  color: #8B6508;
+}
+#navbar.scrolled .theme-toggle:hover { background: rgba(184,134,11,0.16); }
+
+/* Keep it next to the hamburger on phones; hamburger has its own padding */
+@media (max-width: 768px) {
+  .nav-inner .theme-toggle { margin-left: auto; margin-right: 4px; width: 36px; height: 36px; }
+}
+
+/* Smooth swap only while the button is clicked (class added by app.js),
+   so normal page loads and hovers are not slowed down */
+html.theme-switching *, html.theme-switching *::before, html.theme-switching *::after {
+  transition: background-color .3s ease, color .3s ease, border-color .3s ease !important;
+}
+
+/* ── 2. DARK PALETTE ──────────────────────────────────────────── */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --dk-bg:          #0A1220;   /* page background (same family as the footer) */
+  --dk-surface:     #111C2E;   /* cards, white sections */
+  --dk-surface-alt: #0E1828;   /* off-white / alternate sections */
+  --dk-surface-2:   #1A2840;   /* hover / raised */
+  --dk-border:      rgba(201,168,76,0.16);
+  --dk-text:        #E9EDF3;
+  --dk-text-muted:  #A9B4C4;
+
+  /* Site tokens that are only ever used for text or light surfaces */
+  --text-primary:   #E9EDF3;
+  --text-secondary: #C9D2DE;
+  --text-muted:     #A9B4C4;
+  --text-light:     #8593A6;
+  --cream:          #111C2E;
+  --cream-dark:     #0E1828;
+  --cream-medium:   #16233A;
+  --cream-border:   rgba(201,168,76,0.16);
+  --grad-light:     linear-gradient(135deg, #0E1828 0%, #111C2E 100%);
+  --grad-gold-subtle: linear-gradient(135deg, #1A1A12 0%, #1C1B10 100%);
+  --grad-glass:     linear-gradient(135deg, rgba(17,28,46,0.92), rgba(17,28,46,0.78));
+  --gold-muted:     rgba(218,165,32,0.14);
+  --gold-border:    rgba(218,165,32,0.30);
+  --shadow-xs:      0 1px 4px rgba(0,0,0,0.35);
+  --shadow-sm:      0 2px 10px rgba(0,0,0,0.35);
+  --shadow-md:      0 6px 24px rgba(0,0,0,0.40);
+  --shadow-lg:      0 16px 48px rgba(0,0,0,0.45);
+  --shadow-card:    0 4px 20px rgba(0,0,0,0.35), 0 1px 4px rgba(0,0,0,0.25);
+}
+
+/* ── 3. GENERATED DARK OVERRIDES ─────────────────────────────────
+   Built from the site stylesheets: white/near-white backgrounds →
+   dark surfaces, dark text → light text, light borders → gold-tinted
+   dark borders. Navy-on-gold buttons are left alone. */
+html[data-theme="dark"] body,
+html[data-theme="dark"] .bg-white,
+html[data-theme="dark"] .section-light,
+html[data-theme="dark"] .section-white,
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] .form-card,
+html[data-theme="dark"] .service-card,
+html[data-theme="dark"] .testi-card,
+html[data-theme="dark"] .accordion-item,
+html[data-theme="dark"] .toast,
+html[data-theme="dark"] .modal,
+html[data-theme="dark"] .service-card--img,
+html[data-theme="dark"] .pkg-card,
+html[data-theme="dark"] .float-btn__tip,
+html[data-theme="dark"] .search-box,
+html[data-theme="dark"] .flight-card,
+html[data-theme="dark"] .route-line__plane,
+html[data-theme="dark"] .filter-sidebar,
+html[data-theme="dark"] .country-pill,
+html[data-theme="dark"] .hotel-card,
+html[data-theme="dark"] .filter-tab,
+html[data-theme="dark"] .currency-card,
+html[data-theme="dark"] .chart-card,
+html[data-theme="dark"] .rates-table,
+html[data-theme="dark"] .hajj-tier-card__body,
+html[data-theme="dark"] .departure-card,
+html[data-theme="dark"] .timeline-item,
+html[data-theme="dark"] .blog-card,
+html[data-theme="dark"] .sidebar-widget,
+html[data-theme="dark"] .section,
+html[data-theme="dark"] .accordion-trigger,
+html[data-theme="dark"] .hajj-tier-card,
+html[data-theme="dark"] .process-step,
+html[data-theme="dark"] .social-menu__item a,
+html[data-theme="dark"] section,
+html[data-theme="dark"] .section,
+html[data-theme="dark"] .section-sm,
+html[data-theme="dark"] .section-lg,
+html[data-theme="dark"] .trust-badge,
+html[data-theme="dark"] .partners-section,
+html[data-theme="dark"] .partner-card,
+html[data-theme="dark"] #umrah-visa-page .uv-card,
+html[data-theme="dark"] #umrah-visa-page .uv-input,
+html[data-theme="dark"] #umrah-visa-page .uv-combo__list,
+html[data-theme="dark"] #umrah-visa-page .uv-copy,
+html[data-theme="dark"] .fl-hero__tag,
+html[data-theme="dark"] .fl-search-card,
+html[data-theme="dark"] .fl-input,
+html[data-theme="dark"] .fl-pax-drop,
+html[data-theme="dark"] .fl-pax-btn-ctrl,
+html[data-theme="dark"] .fl-multi-del,
+html[data-theme="dark"] .fl-add-city-btn,
+html[data-theme="dark"] .fl-filter-aside,
+html[data-theme="dark"] .fl-sort-select,
+html[data-theme="dark"] .fl-result-card,
+html[data-theme="dark"] .fl-why-section,
+html[data-theme="dark"] .visa-card,
+html[data-theme="dark"] .visa-card__body,
+html[data-theme="dark"] .visa-card__footer,
+html[data-theme="dark"] .visa-how-section,
+html[data-theme="dark"] .visa-contact-box,
+html[data-theme="dark"] .visa-form-card,
+html[data-theme="dark"] .visa-form__input,
+html[data-theme="dark"] .visa-form__select option {
+  background-color:var(--dk-surface);
+}
+html[data-theme="dark"] body,
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6,
+html[data-theme="dark"] p,
+html[data-theme="dark"] .text-navy,
+html[data-theme="dark"] .text-muted,
+html[data-theme="dark"] .section-desc,
+html[data-theme="dark"] .stat-item__number,
+html[data-theme="dark"] .stat-item__label,
+html[data-theme="dark"] .badge--green,
+html[data-theme="dark"] .badge--blue,
+html[data-theme="dark"] .form-label,
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] .form-hint,
+html[data-theme="dark"] .input-icon,
+html[data-theme="dark"] .service-card__title,
+html[data-theme="dark"] .service-card__desc,
+html[data-theme="dark"] .testi-card__text,
+html[data-theme="dark"] .testi-card__name,
+html[data-theme="dark"] .testi-card__trip,
+html[data-theme="dark"] .tab-btn,
+html[data-theme="dark"] .accordion-trigger,
+html[data-theme="dark"] .accordion-body__inner,
+html[data-theme="dark"] .toast__msg,
+html[data-theme="dark"] .toast__close,
+html[data-theme="dark"] .modal__close,
+html[data-theme="dark"] .chip,
+html[data-theme="dark"] .service-card--img .service-card__title,
+html[data-theme="dark"] .service-card--img .service-card__desc,
+html[data-theme="dark"] .pkg-card__name,
+html[data-theme="dark"] .pkg-card__dest,
+html[data-theme="dark"] .pkg-price-big,
+html[data-theme="dark"] .float-btn__tip,
+html[data-theme="dark"] #navbar.scrolled .nav-links a,
+html[data-theme="dark"] #navbar.scrolled .nav-logo__name,
+html[data-theme="dark"] #navbar.scrolled .nav-logo__tag,
+html[data-theme="dark"] .flight-time-big,
+html[data-theme="dark"] .flight-code,
+html[data-theme="dark"] .route-line__dur,
+html[data-theme="dark"] .flight-price-big,
+html[data-theme="dark"] .flight-price-pp,
+html[data-theme="dark"] .filter-sidebar__title,
+html[data-theme="dark"] .filter-group__label,
+html[data-theme="dark"] .country-pill__name,
+html[data-theme="dark"] .country-pill__type,
+html[data-theme="dark"] .hotel-card__name,
+html[data-theme="dark"] .hotel-card__loc,
+html[data-theme="dark"] .hotel-price-big,
+html[data-theme="dark"] .hotel-price-per,
+html[data-theme="dark"] .pkg-inc,
+html[data-theme="dark"] .pkg-price-note,
+html[data-theme="dark"] .filter-tab,
+html[data-theme="dark"] .currency-card__code,
+html[data-theme="dark"] .currency-card__rate,
+html[data-theme="dark"] .change-up,
+html[data-theme="dark"] .tier-feature,
+html[data-theme="dark"] .timeline-title,
+html[data-theme="dark"] .timeline-desc,
+html[data-theme="dark"] .blog-meta-item,
+html[data-theme="dark"] .blog-title,
+html[data-theme="dark"] .blog-excerpt,
+html[data-theme="dark"] .sidebar-title,
+html[data-theme="dark"] .recent-post__title,
+html[data-theme="dark"] .recent-post__date,
+html[data-theme="dark"] .cta-section h2,
+html[data-theme="dark"] .cta-section p,
+html[data-theme="dark"] .section-title,
+html[data-theme="dark"] .trust-badge,
+html[data-theme="dark"] .check-opt,
+html[data-theme="dark"] .section:not(.section-dark):not(.cta-section) h2,
+html[data-theme="dark"] .section:not(.section-dark):not(.cta-section) h3,
+html[data-theme="dark"] .section:not(.section-dark):not(.cta-section) h4,
+html[data-theme="dark"] .section:not(.section-dark):not(.cta-section) p,
+html[data-theme="dark"] .partner-logo,
+html[data-theme="dark"] .rates-table th,
+html[data-theme="dark"] .rates-table td,
+html[data-theme="dark"] section,
+html[data-theme="dark"] .section,
+html[data-theme="dark"] .section-sm,
+html[data-theme="dark"] .section-lg,
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6,
+html[data-theme="dark"] .trust-badge__name,
+html[data-theme="dark"] .partners-heading,
+html[data-theme="dark"] .partner-card__name,
+html[data-theme="dark"] .article-meta,
+html[data-theme="dark"] .article-body h2,
+html[data-theme="dark"] .article-body h3,
+html[data-theme="dark"] .article-body p,
+html[data-theme="dark"] .article-body li,
+html[data-theme="dark"] .article-body strong,
+html[data-theme="dark"] .article-tip,
+html[data-theme="dark"] #umrah-visa-page .uv-card__head,
+html[data-theme="dark"] #umrah-visa-page .uv-lbl,
+html[data-theme="dark"] #umrah-visa-page .uv-input,
+html[data-theme="dark"] #umrah-visa-page .uv-alert,
+html[data-theme="dark"] #umrah-visa-page .uv-steps li,
+html[data-theme="dark"] #umrah-visa-page .uv-chip,
+html[data-theme="dark"] #umrah-visa-page .uv-copy,
+html[data-theme="dark"] #umrah-visa-page .uv-side-list li,
+html[data-theme="dark"] .fl-hero__title,
+html[data-theme="dark"] .fl-hero__sub,
+html[data-theme="dark"] .fl-trip-tab,
+html[data-theme="dark"] .fl-check,
+html[data-theme="dark"] .fl-label,
+html[data-theme="dark"] .fl-input,
+html[data-theme="dark"] .fl-pax-trigger,
+html[data-theme="dark"] .fl-pax-type,
+html[data-theme="dark"] .fl-pax-btn-ctrl,
+html[data-theme="dark"] .fl-pax-num,
+html[data-theme="dark"] .fl-class-title,
+html[data-theme="dark"] .fl-class-opt,
+html[data-theme="dark"] .fl-add-city-btn,
+html[data-theme="dark"] .fl-filter-head,
+html[data-theme="dark"] .fl-filter-group-label,
+html[data-theme="dark"] .fl-check-row,
+html[data-theme="dark"] .fl-results-title,
+html[data-theme="dark"] .fl-sort-select,
+html[data-theme="dark"] .fl-result-airline-name,
+html[data-theme="dark"] .fl-result-time-val,
+html[data-theme="dark"] .fl-result-price-val,
+html[data-theme="dark"] .fl-no-results-cta p,
+html[data-theme="dark"] .fl-why-card h3,
+html[data-theme="dark"] .fl-why-card p,
+html[data-theme="dark"] .fx-status,
+html[data-theme="dark"] .fx-flat,
+html[data-theme="dark"] .fx-cur__text strong,
+html[data-theme="dark"] .fx-cur__name,
+html[data-theme="dark"] .fx-cur__unit,
+html[data-theme="dark"] .legal-updated,
+html[data-theme="dark"] .legal-wrap h2,
+html[data-theme="dark"] .legal-wrap h3,
+html[data-theme="dark"] .legal-wrap p,
+html[data-theme="dark"] .legal-wrap li,
+html[data-theme="dark"] .legal-wrap strong,
+html[data-theme="dark"] .legal-toc p,
+html[data-theme="dark"] .visa-grid-title,
+html[data-theme="dark"] .visa-grid-sub,
+html[data-theme="dark"] .visa-card__country,
+html[data-theme="dark"] .visa-card__info-val,
+html[data-theme="dark"] .visa-section-title,
+html[data-theme="dark"] .visa-step__title,
+html[data-theme="dark"] .visa-step__desc,
+html[data-theme="dark"] .visa-enquiry-desc,
+html[data-theme="dark"] .visa-trust-badge,
+html[data-theme="dark"] .visa-contact-box__phone,
+html[data-theme="dark"] .visa-form__label,
+html[data-theme="dark"] .visa-form__input,
+html[data-theme="dark"] .visa-form__select option {
+  color:var(--dk-text);
+}
+html[data-theme="dark"] ::-webkit-scrollbar-track,
+html[data-theme="dark"] .bg-cream,
+html[data-theme="dark"] .bg-light,
+html[data-theme="dark"] .section-alt,
+html[data-theme="dark"] .section-cream,
+html[data-theme="dark"] .modal__close,
+html[data-theme="dark"] .progress-bar,
+html[data-theme="dark"] .chip,
+html[data-theme="dark"] .bg-cream,
+html[data-theme="dark"] section:nth-of-type(2n):not(.section-dark):not(.cta-section):not(.stats-bar),
+html[data-theme="dark"] .trust-badge,
+html[data-theme="dark"] .filter-tab,
+html[data-theme="dark"] .partner-logo,
+html[data-theme="dark"] .rates-table th,
+html[data-theme="dark"] #umrah-visa-page .uv-card__head,
+html[data-theme="dark"] #umrah-visa-page .uv-actions,
+html[data-theme="dark"] #umrah-visa-page .uv-chip,
+html[data-theme="dark"] #umrah-visa-page .uv-res--ok,
+html[data-theme="dark"] #umrah-visa-page .uv-res--no,
+html[data-theme="dark"] .fl-trip-tab,
+html[data-theme="dark"] input.fl-input[disabled],
+html[data-theme="dark"] .fl-multi-row,
+html[data-theme="dark"] .fl-results-section,
+html[data-theme="dark"] .fl-result-dur-line,
+html[data-theme="dark"] .fl-result-dur-line::before,
+html[data-theme="dark"] .fl-why-card,
+html[data-theme="dark"] .legal-toc,
+html[data-theme="dark"] .visa-grid-section,
+html[data-theme="dark"] .visa-enquiry-section {
+  background-color:var(--dk-surface-alt);
+}
+html[data-theme="dark"] .section-alt,
+html[data-theme="dark"] .section-cream,
+html[data-theme="dark"] .divider,
+html[data-theme="dark"] .pkg-card__footer,
+html[data-theme="dark"] .hotel-card__footer,
+html[data-theme="dark"] .blog-footer,
+html[data-theme="dark"] .section + .section,
+html[data-theme="dark"] .partners-section,
+html[data-theme="dark"] #umrah-visa-page .uv-actions,
+html[data-theme="dark"] .fl-popular-routes,
+html[data-theme="dark"] .fl-results-section,
+html[data-theme="dark"] .visa-card__footer,
+html[data-theme="dark"] .visa-how-section,
+html[data-theme="dark"] .visa-enquiry-section {
+  border-top-color:var(--dk-border);
+}
+html[data-theme="dark"] .section-alt,
+html[data-theme="dark"] .section-cream,
+html[data-theme="dark"] .tab-nav,
+html[data-theme="dark"] .filter-sidebar__title,
+html[data-theme="dark"] .rates-table tbody tr,
+html[data-theme="dark"] .recent-post,
+html[data-theme="dark"] .filter-group__label,
+html[data-theme="dark"] .rates-table td,
+html[data-theme="dark"] .article-meta,
+html[data-theme="dark"] .fl-hero,
+html[data-theme="dark"] .fl-trip-tabs,
+html[data-theme="dark"] .fl-pax-row,
+html[data-theme="dark"] .fl-filter-group {
+  border-bottom-color:var(--dk-border);
+}
+html[data-theme="dark"] .card--flat,
+html[data-theme="dark"] .card--bordered,
+html[data-theme="dark"] .badge--outline,
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] .form-control:hover:not(:focus),
+html[data-theme="dark"] .accordion-item,
+html[data-theme="dark"] .service-card--img,
+html[data-theme="dark"] .pkg-card,
+html[data-theme="dark"] .filter-tab,
+html[data-theme="dark"] .time-btn,
+html[data-theme="dark"] .timeline-item::before,
+html[data-theme="dark"] .hotel-card,
+html[data-theme="dark"] .form-card,
+html[data-theme="dark"] .trust-badge,
+html[data-theme="dark"] .sidebar-widget,
+html[data-theme="dark"] .departure-card,
+html[data-theme="dark"] .hajj-tier-card,
+html[data-theme="dark"] .filter-sidebar,
+html[data-theme="dark"] .partner-logo,
+html[data-theme="dark"] .process-step,
+html[data-theme="dark"] .rates-table,
+html[data-theme="dark"] .partner-card,
+html[data-theme="dark"] #umrah-visa-page .uv-input,
+html[data-theme="dark"] #umrah-visa-page .uv-combo__list,
+html[data-theme="dark"] #umrah-visa-page .uv-chip,
+html[data-theme="dark"] #umrah-visa-page .uv-res--ok,
+html[data-theme="dark"] #umrah-visa-page .uv-res--no,
+html[data-theme="dark"] .fl-hero__tag,
+html[data-theme="dark"] .fl-search-card,
+html[data-theme="dark"] .fl-input,
+html[data-theme="dark"] .fl-pax-drop,
+html[data-theme="dark"] .fl-pax-btn-ctrl,
+html[data-theme="dark"] .fl-multi-row,
+html[data-theme="dark"] .fl-multi-del,
+html[data-theme="dark"] .fl-filter-aside,
+html[data-theme="dark"] .fl-sort-select,
+html[data-theme="dark"] .fl-result-card,
+html[data-theme="dark"] .fl-why-card,
+html[data-theme="dark"] .legal-toc,
+html[data-theme="dark"] .visa-card,
+html[data-theme="dark"] .visa-contact-box,
+html[data-theme="dark"] .visa-form-card,
+html[data-theme="dark"] .visa-form__input {
+  border-color:var(--dk-border);
+}
+html[data-theme="dark"] .card--glass,
+html[data-theme="dark"] .skeleton,
+html[data-theme="dark"] .fl-hero {
+  background-image:none;
+  background-color:var(--dk-surface-alt);
+}
+html[data-theme="dark"] .badge--gold,
+html[data-theme="dark"] .form-error,
+html[data-theme="dark"] .trust-badge,
+html[data-theme="dark"] .pkg-inc,
+html[data-theme="dark"] .amenity-chip,
+html[data-theme="dark"] .blog-author,
+html[data-theme="dark"] .blog-tag,
+html[data-theme="dark"] .urgency-pill,
+html[data-theme="dark"] .change-down,
+html[data-theme="dark"] #umrah-visa-page .uv-err,
+html[data-theme="dark"] #umrah-visa-page .uv-res--no a,
+html[data-theme="dark"] .fl-popular-label i,
+html[data-theme="dark"] .fl-chip,
+html[data-theme="dark"] .fl-multi-del,
+html[data-theme="dark"] .fx-msg a,
+html[data-theme="dark"] .pd-box--exc h3 i,
+html[data-theme="dark"] .visa-hero__badge,
+html[data-theme="dark"] .visa-hero__stat-num,
+html[data-theme="dark"] .visa-count-badge,
+html[data-theme="dark"] .visa-card__doc-chip,
+html[data-theme="dark"] .visa-card__price-val,
+html[data-theme="dark"] .visa-gold,
+html[data-theme="dark"] .visa-step__icon svg {
+  color:var(--gold-light);
+}
+html[data-theme="dark"] .pkg-price-note,
+html[data-theme="dark"] .trust-badge__sub,
+html[data-theme="dark"] .service-card__desc,
+html[data-theme="dark"] #umrah-visa-page .uv-note,
+html[data-theme="dark"] .fl-pax-age,
+html[data-theme="dark"] .fl-popular-label,
+html[data-theme="dark"] .fl-range-labels,
+html[data-theme="dark"] .fl-results-sub,
+html[data-theme="dark"] .fl-sort-label,
+html[data-theme="dark"] .fl-result-airline-code,
+html[data-theme="dark"] .fl-result-time-city,
+html[data-theme="dark"] .fl-result-dur-val,
+html[data-theme="dark"] .fl-result-price-note,
+html[data-theme="dark"] .visa-hero__sub,
+html[data-theme="dark"] .visa-search-icon,
+html[data-theme="dark"] .visa-search-clear,
+html[data-theme="dark"] .visa-hero__stat-lbl,
+html[data-theme="dark"] .visa-card__info-label,
+html[data-theme="dark"] .visa-card__price-label,
+html[data-theme="dark"] .visa-no-results,
+html[data-theme="dark"] .visa-contact-box__label,
+html[data-theme="dark"] .visa-form__privacy {
+  color:var(--dk-text-muted);
+}
+html[data-theme="dark"] .float-btn__tip::after {
+  border-left-color:var(--dk-border);
+}
+html[data-theme="dark"] #navbar.scrolled,
+html[data-theme="dark"] .service-card,
+html[data-theme="dark"] .testi-card,
+html[data-theme="dark"] body,
+html[data-theme="dark"] .hotel-card,
+html[data-theme="dark"] .hotel-card__body,
+html[data-theme="dark"] .pkg-card,
+html[data-theme="dark"] .pkg-card__body,
+html[data-theme="dark"] .blog-card,
+html[data-theme="dark"] .blog-card__body,
+html[data-theme="dark"] .hajj-tier-card,
+html[data-theme="dark"] .hajj-tier-card__body,
+html[data-theme="dark"] .card.card__body,
+html[data-theme="dark"] .departure-card,
+html[data-theme="dark"] .form-card,
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] textarea.form-control,
+html[data-theme="dark"] .accordion-item,
+html[data-theme="dark"] .accordion-body__inner,
+html[data-theme="dark"] .process-step,
+html[data-theme="dark"] .currency-card,
+html[data-theme="dark"] .rates-table,
+html[data-theme="dark"] .rates-table tbody tr,
+html[data-theme="dark"] .chart-card,
+html[data-theme="dark"] .filter-sidebar,
+html[data-theme="dark"] .sidebar-widget,
+html[data-theme="dark"] .partner-logo {
+  background-color:var(--dk-surface) !important;
+}
+html[data-theme="dark"] .service-card,
+html[data-theme="dark"] .testi-card,
+html[data-theme="dark"] .hotel-card,
+html[data-theme="dark"] .pkg-card,
+html[data-theme="dark"] .blog-card,
+html[data-theme="dark"] .hajj-tier-card,
+html[data-theme="dark"] .card.card__body,
+html[data-theme="dark"] .departure-card,
+html[data-theme="dark"] .form-card,
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] .accordion-item,
+html[data-theme="dark"] .process-step,
+html[data-theme="dark"] .filter-tab,
+html[data-theme="dark"] .currency-card,
+html[data-theme="dark"] .rates-table,
+html[data-theme="dark"] .chart-card,
+html[data-theme="dark"] .filter-sidebar,
+html[data-theme="dark"] .sidebar-widget,
+html[data-theme="dark"] .trust-badge,
+html[data-theme="dark"] .partner-logo {
+  border-color:var(--dk-border) !important;
+}
+html[data-theme="dark"] .accordion-trigger:hover,
+html[data-theme="dark"] .rates-table tr:hover td,
+html[data-theme="dark"] .fl-class-opt:hover,
+html[data-theme="dark"] .fl-why-card:hover {
+  background-color:var(--dk-surface-2);
+}
+html[data-theme="dark"] body,
+html[data-theme="dark"] .bg-cream,
+html[data-theme="dark"] .section-cream,
+html[data-theme="dark"] .section-title,
+html[data-theme="dark"] .section-desc,
+html[data-theme="dark"] .service-card,
+html[data-theme="dark"] .service-card__title,
+html[data-theme="dark"] .service-card__desc,
+html[data-theme="dark"] .testi-card,
+html[data-theme="dark"] .testi-card__text,
+html[data-theme="dark"] .testi-card__name,
+html[data-theme="dark"] .hotel-card,
+html[data-theme="dark"] .hotel-card__body,
+html[data-theme="dark"] .hotel-card__name,
+html[data-theme="dark"] .hotel-card__loc,
+html[data-theme="dark"] .hotel-price-big,
+html[data-theme="dark"] .hotel-price-per,
+html[data-theme="dark"] .pkg-card__body,
+html[data-theme="dark"] .pkg-card__name,
+html[data-theme="dark"] .pkg-card__dest,
+html[data-theme="dark"] .pkg-price-big,
+html[data-theme="dark"] .pkg-price-note,
+html[data-theme="dark"] .blog-card__body,
+html[data-theme="dark"] .blog-title,
+html[data-theme="dark"] .blog-excerpt,
+html[data-theme="dark"] .hajj-tier-card__body,
+html[data-theme="dark"] .tier-feature,
+html[data-theme="dark"] .timeline-title,
+html[data-theme="dark"] .timeline-desc,
+html[data-theme="dark"] .card.card__body,
+html[data-theme="dark"] .card.card__body p,
+html[data-theme="dark"] .departure-card,
+html[data-theme="dark"] .form-label,
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] textarea.form-control,
+html[data-theme="dark"] .accordion-trigger,
+html[data-theme="dark"] .accordion-body__inner,
+html[data-theme="dark"] .filter-tab,
+html[data-theme="dark"] .currency-card,
+html[data-theme="dark"] .rates-table tbody tr,
+html[data-theme="dark"] .rates-table tbody tr:hover td,
+html[data-theme="dark"] .rates-table td,
+html[data-theme="dark"] .filter-sidebar__title,
+html[data-theme="dark"] .filter-group__label,
+html[data-theme="dark"] .check-opt,
+html[data-theme="dark"] .sidebar-title,
+html[data-theme="dark"] .recent-post__title,
+html[data-theme="dark"] .section:not(.section-dark):not(.cta-section):not([style*="background:#"]):not([style*="background: #"]) h2,
+html[data-theme="dark"] .section:not(.section-dark):not(.cta-section):not([style*="background:#"]):not([style*="background: #"]) h3,
+html[data-theme="dark"] .section:not(.section-dark):not(.cta-section):not([style*="background:#"]):not([style*="background: #"]) h4,
+html[data-theme="dark"] .section:not(.section-dark):not(.cta-section):not([style*="background:#"]):not([style*="background: #"]) p,
+html[data-theme="dark"] .section:not(.section-dark):not(.cta-section):not([style*="background:#"]):not([style*="background: #"]) li,
+html[data-theme="dark"] .trust-badge,
+html[data-theme="dark"] .partner-logo,
+html[data-theme="dark"] .fx-table td.fx-buy,
+html[data-theme="dark"] .fx-msg {
+  color:var(--dk-text) !important;
+}
+html[data-theme="dark"] .bg-cream,
+html[data-theme="dark"] .section-cream,
+html[data-theme="dark"] .accordion-trigger,
+html[data-theme="dark"] .filter-tab,
+html[data-theme="dark"] .rates-table tbody tr:nth-child(2n),
+html[data-theme="dark"] .trust-badge {
+  background-color:var(--dk-surface-alt) !important;
+}
+html[data-theme="dark"] .pkg-inc,
+html[data-theme="dark"] .blog-tag,
+html[data-theme="dark"] .urgency-pill,
+html[data-theme="dark"] .amenity-chip,
+html[data-theme="dark"] .fx-table td.fx-sell {
+  color:var(--gold-light) !important;
+}
+html[data-theme="dark"] .blog-meta-item,
+html[data-theme="dark"] .blog-author,
+html[data-theme="dark"] .contact-detail__label {
+  color:var(--dk-text-muted) !important;
+}
+html[data-theme="dark"] .timeline {
+  border-left-color:var(--dk-border) !important;
+}
+html[data-theme="dark"] .rates-table tbody tr:hover td {
+  background-color:var(--dk-surface-2) !important;
+}
+html[data-theme="dark"] .rates-table td {
+  border-bottom-color:var(--dk-border) !important;
+}
+@media (max-width: 768px) {
+  html[data-theme="dark"] .nav-mobile-menu {
+    background-color:var(--dk-surface);
+  }
+  html[data-theme="dark"] .nav-mobile-menu {
+    border-top-color:var(--dk-border);
+  }
+  html[data-theme="dark"] .nav-mobile-menu a {
+    color:var(--dk-text);
+  }
+  html[data-theme="dark"] .nav-mobile-menu a {
+    border-bottom-color:var(--dk-border);
+  }
+  }
+
+/* ── 4. HAND-TUNED DARK RULES (win over section 3) ─────────────── */
+html[data-theme="dark"] body { background-color: var(--dk-bg) !important; color: var(--dk-text); }
+
+/* Navbar once scrolled: deep navy glass instead of white */
+html[data-theme="dark"] #navbar.scrolled {
+  background: rgba(10,18,32,0.96) !important;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.5) !important;
+  border-bottom: 1px solid var(--dk-border);
+}
+html[data-theme="dark"] #navbar.scrolled .nav-links a { color: rgba(255,255,255,0.82); }
+html[data-theme="dark"] #navbar.scrolled .nav-links a:hover,
+html[data-theme="dark"] #navbar.scrolled .nav-links a.active { color: var(--gold-light); }
+html[data-theme="dark"] #navbar.scrolled .hamburger span { background: #fff; }
+html[data-theme="dark"] #navbar.scrolled .theme-toggle {
+  background: rgba(255,255,255,0.06); border-color: rgba(218,165,32,0.45); color: #F4D03F;
+}
+
+/* Gold reads better a shade lighter on dark */
+html[data-theme="dark"] [style*="color:var(--gold-dark)"],
+html[data-theme="dark"] [style*="color: var(--gold-dark)"] { color: var(--gold-light) !important; }
+html[data-theme="dark"] [style*="color:var(--navy)"],
+html[data-theme="dark"] [style*="color: var(--navy)"],
+html[data-theme="dark"] [style*="color:var(--navy-mid)"] { color: var(--dk-text) !important; }
+
+/* Form fields */
+html[data-theme="dark"] input:not([type="radio"]):not([type="checkbox"]):not([type="range"]):not([type="submit"]):not([type="button"]),
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+  background-color: var(--dk-surface-alt);
+  color: var(--dk-text);
+  border-color: rgba(201,168,76,0.22);
+}
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder { color: #7D8A9C; opacity: 1; }
+html[data-theme="dark"] select option { background: var(--dk-surface); color: var(--dk-text); }
+html[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.8); }
+
+/* Tables */
+html[data-theme="dark"] table td, html[data-theme="dark"] table th { border-color: var(--dk-border); }
+
+/* Logos drawn for white backgrounds keep a soft light tile so they stay readable */
+html[data-theme="dark"] .partner-logo,
+html[data-theme="dark"] .partner-card { background-color: #F3F4F6 !important; }
+html[data-theme="dark"] .partner-logo *, html[data-theme="dark"] .partner-card * { color: #1A1A2E !important; }
+
+/* Slightly dim bright photos so they sit well on dark */
+html[data-theme="dark"] img:not([src*="logo"]):not([src$=".svg"]) { filter: brightness(0.92); }
+
+html[data-theme="dark"] { background-color: var(--dk-bg); }
+
+/* Scrollbar */
+html[data-theme="dark"] { scrollbar-color: #2A3A55 #0A1220; }
+
+/* Navy buttons would disappear into the dark page: give them a gold edge */
+html[data-theme="dark"] .btn--navy {
+  background: #16233A !important;
+  color: #fff !important;
+  border: 1px solid rgba(218,165,32,0.55) !important;
+}
+html[data-theme="dark"] .btn--navy:hover { background: #1F3050 !important; border-color: #DAA520 !important; }
+
+/* Packages page: "Full day-by-day itineraries" box (inline-styled) */
+html[data-theme="dark"] .pkg-links {
+  background: var(--dk-surface) !important;
+  border-color: var(--dk-border) !important;
+}
+html[data-theme="dark"] .pkg-links a { color: var(--gold-light) !important; }
+
+/* Package detail: "All packages" button is gold in dark mode, so navy text */
+html[data-theme="dark"] .pd-pn a.pd-pn__all, html[data-theme="dark"] a.pd-pn__all.pd-pn__all { color: #0D1B2A !important; }
+
+/* ── 5. NAVBAR FIT ────────────────────────────────────────────────
+   The ten nav links + Book Now + this button only fit on one line from
+   ~1200px up. Between tablets and small laptops the links used to wrap
+   onto two lines ("HAJJ &" / "UMRAH"), so use the hamburger menu there. */
+@media (max-width: 1199px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-inner .theme-toggle { margin-left: auto; margin-right: 6px; }
+}

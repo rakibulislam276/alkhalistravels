@@ -12,6 +12,7 @@ const App = {
   init() {
     this.detectRoot();
     this.injectLayout();
+    this.initTheme();
     this.initNavbar();
     this.initScrollReveal();
     this.initCounters();
@@ -137,6 +138,10 @@ const App = {
     <ul class="nav-links" role="list">${navLinks}
       <li><a href="${r}pages/contact.html" class="nav-cta">Book Now</a></li>
     </ul>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+      <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor" stroke="none"/><path d="M12 1.5v2.5M12 20v2.5M4.22 4.22l1.77 1.77M18.01 18.01l1.77 1.77M1.5 12H4M20 12h2.5M4.22 19.78l1.77-1.77M18.01 5.99l1.77-1.77"/></svg>
+    </button>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
       <span></span><span></span><span></span>
     </button>
@@ -328,6 +333,53 @@ const App = {
     window.addEventListener('load',               () => setTimeout(hide, 300));
     setTimeout(hide, 2500);
     if (document.readyState === 'interactive' || document.readyState === 'complete') setTimeout(hide, 800);
+  },
+
+  /* ── DAY / NIGHT THEME ─────────────────────────────────────────
+     The inline script in <head> already set <html data-theme> before
+     paint. Here we wire the navbar button, save the visitor's choice,
+     and follow the system setting live until they pick one. */
+  initTheme() {
+    const html = document.documentElement;
+    const KEY = 'ak-theme';
+    const mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+    const saved = () => { try { const t = localStorage.getItem(KEY); return (t === 'light' || t === 'dark') ? t : null; } catch (e) { return null; } };
+    const btn = document.getElementById('themeToggle');
+
+    const apply = (theme, animate) => {
+      if (animate) {
+        html.classList.add('theme-switching');
+        clearTimeout(this._themeTimer);
+        this._themeTimer = setTimeout(() => html.classList.remove('theme-switching'), 350);
+      }
+      html.setAttribute('data-theme', theme);
+      document.querySelectorAll('meta[name="theme-color"]').forEach(m => {
+        m.setAttribute('content', theme === 'dark' ? '#0A1220' : '#C9A84C');
+        m.removeAttribute('media');
+      });
+      if (btn) {
+        const label = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+        btn.setAttribute('aria-label', label);
+        btn.setAttribute('title', label);
+        btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+      }
+    };
+
+    apply(saved() || (mq && mq.matches ? 'dark' : 'light'), false);
+
+    if (btn) btn.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      try { localStorage.setItem(KEY, next); } catch (e) {}
+      apply(next, true);
+    });
+
+    if (mq) {
+      const onChange = e => { if (!saved()) apply(e.matches ? 'dark' : 'light', true); };
+      if (mq.addEventListener) mq.addEventListener('change', onChange); else if (mq.addListener) mq.addListener(onChange);
+    }
+
+    /* Keep tabs in sync */
+    window.addEventListener('storage', e => { if (e.key === KEY && (e.newValue === 'light' || e.newValue === 'dark')) apply(e.newValue, false); });
   },
 
   /* ── NAVBAR ────────────────────────────────────────────────── */

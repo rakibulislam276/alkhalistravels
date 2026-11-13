@@ -104,8 +104,10 @@ alkhalistravels\                        ← THE REPO ROOT
 │   │   ├── footer-social-fix.css       Footer social icon circles
 │   │   ├── homepage-sections-fix.css   Homepage section layouts (destinations grid)
 │   │   ├── main.css                    General styles
-│   │   └── color-fix.css               ★ LOADS LAST — light theme overrides +
-│   │                                   ALL MOBILE FIXES live at the bottom
+│   │   ├── color-fix.css               ★ light theme overrides +
+│   │   │                               ALL MOBILE FIXES live at the bottom
+│   │   └── theme.css                   ★ DAY/NIGHT MODE — toggle button + all
+│   │                                   dark-mode colours (linked just before </head>)
 │   └── pages\
 │       ├── pages.css                   Inner-page heroes, section styles
 │       ├── booking.css                 Booking widget styling
@@ -143,6 +145,8 @@ alkhalistravels\                        ← THE REPO ROOT
 | Inner-page hero photos | Replace `assets\images\hero-<page>.jpg`; wiring is in `css\pages\images.css` | |
 | Colors / fonts / spacing | `css\base\tokens.css` | Change once, applies everywhere |
 | Mobile layout issues | Bottom of `css\components\color-fix.css` | The mobile-fix block |
+| Dark (night) mode colours | `css\components\theme.css` — palette in section 2, fixes in section 4 | Light mode is untouched by this file |
+| Day/night button behaviour | `js\core\app.js` — `initTheme()` | Choice saved in the browser as `ak-theme` |
 | Privacy Policy text | `pages\privacy.html` | |
 | 404 page | `404.html` | Self-contained; safe to edit alone |
 | SEO: page titles & descriptions | Each page's `<head>` — `<title>` and `<meta name="description">` | |
@@ -236,7 +240,9 @@ instead of showing the cached old one.
    description, dates, author, URL — it appears twice as `@id` and
    `mainEntityOfPage`), the `<h1>`, breadcrumb label, the header image,
    the meta row (date/read time/author/category), the body, and the
-   WhatsApp CTA text.
+   WhatsApp CTA text. Keep the one-line theme `<script>` right after
+   `<meta charset>` and the `theme.css` link before `</head>`, or the
+   page will flash white in night mode.
 3. **Add the article's photo**: an 800×500 jpg in `assets\images\` named
    `blog-<topic>.jpg`.
 4. **Add a card** in `data\data.js → blogPosts:` — copy an existing line,

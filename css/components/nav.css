@@ -94,6 +94,41 @@
   user-select: none;
 }
 
+/* "Limited Seats — Umrah <month>" offer, left of the opening hours.
+   Text is written by umrahOfferText() in js/core/app.js. */
+.topbar__offer {
+  color: #E8C872;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  border: 1px solid rgba(201,168,76,0.35);
+  background: rgba(201,168,76,0.08);
+  transition: background .2s ease, color .2s ease;
+}
+.topbar__offer:hover { color: #F4D03F; background: rgba(201,168,76,0.18); }
+.topbar__offer-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #4ADE80;
+  box-shadow: 0 0 0 0 rgba(74,222,128,0.6);
+  animation: topbarOfferPulse 1.8s ease-out infinite;
+}
+@keyframes topbarOfferPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(74,222,128,0.6); }
+  70%  { box-shadow: 0 0 0 6px rgba(74,222,128,0); }
+  100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+}
+@media (prefers-reduced-motion: reduce) { .topbar__offer-dot { animation: none; } }
+/* Medium screens: drop the email link so the offer still fits on one line */
+@media (max-width: 1100px) {
+  .topbar__contacts .topbar__item--link[href^="mailto:"],
+  .topbar__contacts .topbar__item--link[href^="mailto:"] + .topbar__sep { display: none; }
+}
+/* Small tablets: the offer matters more than the opening hours */
+@media (max-width: 1000px) {
+  .topbar__right .topbar__item:not(.topbar__offer),
+  .topbar__sep--offer { display: none; }
+}
+
 /* ── NAVBAR ───────────────────────────────────────────────────── */
 #navbar {
   position: fixed;

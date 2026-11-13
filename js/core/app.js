@@ -28,7 +28,7 @@ const App = {
     // Translated copies live one folder deeper (/hi/, /ur/ ...). Root always
     // points at the shared site root; js/core/i18n.js keeps links in-language.
     const langDir = /^\/(hi|ur|ar|mr|gu|bn)\//.test(path) ? '../' : '';
-    this.root = (path.includes('/pages/blog/') ? '../../' : (path.includes('/pages/') ? '../' : './')) + langDir;
+    this.root = ((path.includes('/pages/blog/') || path.includes('/pages/packages/')) ? '../../' : (path.includes('/pages/') ? '../' : './')) + langDir;
     window.SITE_ROOT = this.root;
   },
 

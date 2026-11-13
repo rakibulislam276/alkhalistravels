@@ -100,7 +100,7 @@ window.AlKhalis.Data = {
       name:  'Dubai, UAE',
       sub:   '3h 30min from Mumbai',
       price: 'From ₹35,000',
-      href:  'pages/packages.html',
+      href:  'pages/packages/dubai-deluxe.html',
       alt:   'Dubai skyline with Burj Khalifa'
     },
     {
@@ -108,7 +108,7 @@ window.AlKhalis.Data = {
       name:  'Paris, France',
       sub:   '9h from Mumbai',
       price: 'From ₹65,000',
-      href:  'pages/packages.html',
+      href:  'pages/packages/europe-grand-tour.html',
       alt:   'Eiffel Tower Paris'
     },
     {
@@ -116,7 +116,7 @@ window.AlKhalis.Data = {
       name:  'Singapore',
       sub:   '5h 30min from Mumbai',
       price: 'From ₹45,000',
-      href:  'pages/packages.html',
+      href:  'pages/packages/singapore-malaysia.html',
       alt:   'Singapore Marina Bay Sands skyline'
     },
     {
@@ -154,6 +154,7 @@ window.AlKhalis.Data = {
     {
       img:'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&h=400&fit=crop&auto=format',
       alt:'Dubai skyline Burj Khalifa',
+      slug:'dubai-deluxe',
       name:'Dubai Deluxe', dest:'Dubai, UAE', nights:5, price:42999,
       priceNote:'per person', cat:'international',
       includes:['✈ Flights','🏨 4★ Hotel','🚌 Transfers','🎯 Sightseeing'],
@@ -162,6 +163,7 @@ window.AlKhalis.Data = {
     {
       img:'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=600&h=400&fit=crop&auto=format',
       alt:'Masjid al-Haram Makkah',
+      slug:'umrah-deluxe',
       name:'Umrah Deluxe', dest:'Makkah & Madinah, KSA', nights:14, price:110000,
       priceNote:'per person', cat:'religious',
       includes:['✈ Direct Flight','🏨 5★ Hotel','🕋 Ziyarat','🍽 Meals'],
@@ -170,6 +172,7 @@ window.AlKhalis.Data = {
     {
       img:'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&h=400&fit=crop&auto=format',
       alt:'Singapore Marina Bay Sands',
+      slug:'singapore-malaysia',
       name:'Singapore + Malaysia', dest:'Singapore & Kuala Lumpur', nights:6, price:68000,
       priceNote:'per person', cat:'international',
       includes:['✈ Flights','🏨 Hotels','🚌 Transfers','🎡 Theme Parks'],
@@ -178,6 +181,7 @@ window.AlKhalis.Data = {
     {
       img:'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&h=400&fit=crop&auto=format',
       alt:'Bali rice terrace romantic',
+      slug:'bali-honeymoon',
       name:'Bali Honeymoon Special', dest:'Bali, Indonesia', nights:7, price:85000,
       priceNote:'per couple', cat:'honeymoon',
       includes:['✈ Flights','🛖 Villa Stay','🍽 Candlelit Dinner','💆 Spa'],
@@ -186,6 +190,7 @@ window.AlKhalis.Data = {
     {
       img:'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&h=400&fit=crop&auto=format',
       alt:'Eiffel Tower Paris Europe',
+      slug:'europe-grand-tour',
       name:'Europe Grand Tour', dest:'Paris · Rome · Amsterdam', nights:9, price:185000,
       priceNote:'per person', cat:'international',
       includes:['✈ Flights','🏨 4★ Hotels','🚄 Rail Pass','🧳 Expert Guide'],
@@ -194,6 +199,7 @@ window.AlKhalis.Data = {
     {
       img:'https://images.unsplash.com/photo-1560179304-6fc1d8749b23?w=600&h=400&fit=crop&auto=format',
       alt:'Kashmir Dal Lake snow mountains',
+      slug:'kashmir-valley',
       name:'Kashmir Valley Special', dest:'Srinagar · Gulmarg · Pahalgam', nights:5, price:28000,
       priceNote:'per person', cat:'domestic',
       includes:['✈ Flights','🏨 Houseboat','🛶 Shikara Ride','🍽 Meals'],
@@ -202,6 +208,7 @@ window.AlKhalis.Data = {
     {
       img:'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&h=400&fit=crop&auto=format',
       alt:'Thailand temple Bangkok',
+      slug:'south-east-asia-group',
       name:'South East Asia Group', dest:'Thailand · Vietnam · Cambodia', nights:10, price:95000,
       priceNote:'per person', cat:'group',
       includes:['✈ Flights','🏨 Hotels','🚌 Coach Tour','🧳 Expert Guide'],
@@ -210,6 +217,7 @@ window.AlKhalis.Data = {
     {
       img:'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&h=400&fit=crop&auto=format',
       alt:'Goa beach sunset waves',
+      slug:'goa-beach',
       name:'Goa Beach Holiday', dest:'North & South Goa', nights:4, price:18500,
       priceNote:'per person', cat:'domestic',
       includes:['✈ Flights','🏨 Beach Resort','🚌 Transfers','🏄 Watersports'],
@@ -218,6 +226,7 @@ window.AlKhalis.Data = {
     {
       img:'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&h=400&fit=crop&auto=format',
       alt:'Maldives overwater villa turquoise',
+      slug:'maldives-luxury',
       name:'Maldives Luxury Escape', dest:'North Malé Atoll', nights:6, price:145000,
       priceNote:'per couple', cat:'honeymoon international',
       includes:['✈ Flights','🛖 Overwater Villa','🤿 Snorkelling','🍽 All-inclusive'],
@@ -226,6 +235,7 @@ window.AlKhalis.Data = {
     {
       img:'https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?w=600&h=400&fit=crop&auto=format',
       alt:'Istanbul Blue Mosque Turkey',
+      slug:'istanbul-city-break',
       name:'Istanbul City Break', dest:'Istanbul, Turkey', nights:5, price:55000,
       priceNote:'per person', cat:'international',
       includes:['✈ Flights','🏨 4★ Hotel','🚌 City Tour','🚢 Bosphorus Cruise'],
@@ -234,6 +244,7 @@ window.AlKhalis.Data = {
     {
       img:'https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=600&h=400&fit=crop&auto=format',
       alt:'Andaman crystal blue water beach',
+      slug:'andaman-adventure',
       name:'Andaman Adventure', dest:'Port Blair · Havelock · Neil Island', nights:5, price:32000,
       priceNote:'per person', cat:'domestic',
       includes:['✈ Flights','🏨 Resort','⛴ Ferry Transfers','🤿 Scuba Diving'],
@@ -242,6 +253,7 @@ window.AlKhalis.Data = {
     {
       img:'https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=600&h=400&fit=crop&auto=format',
       alt:'Switzerland Alps snowy mountains',
+      slug:'switzerland-honeymoon',
       name:'Switzerland Honeymoon', dest:'Zurich · Interlaken · Lucerne', nights:7, price:175000,
       priceNote:'per couple', cat:'honeymoon international',
       includes:['✈ Flights','🏨 5★ Hotels','🚞 Swiss Rail Pass','🎿 Snow Activities'],
@@ -250,6 +262,7 @@ window.AlKhalis.Data = {
     {
       img:'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&h=400&fit=crop&auto=format',
       alt:'Tokyo Japan city lights',
+      slug:'japan-cultural',
       name:'Japan Cultural Tour', dest:'Tokyo · Kyoto · Osaka', nights:8, price:135000,
       priceNote:'per person', cat:'international group',
       includes:['✈ Flights','🏨 Hotels','🚄 Bullet Train Pass','🧳 Expert Guide'],

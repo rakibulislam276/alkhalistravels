@@ -277,6 +277,28 @@ instead of showing the cached old one.
   file's `<link>`/`<script>` tag so all visitors get the update
   immediately.
 
+
+---
+
+## PACKAGE DETAIL PAGES (added Nov 2026)
+
+Each tour package has its own page in `pages/packages/<slug>.html` with a full
+day-by-day itinerary, inclusions, FAQs, related packages and booking buttons.
+
+- Price, nights, image, tag → `data/data.js` (`packages`, each has a `slug`)
+- Overview, itinerary, inclusions, FAQs → `tools/package-itineraries.js`
+- Styles → `css/pages/package-detail.css`
+
+These pages are GENERATED. After editing either file, run from the repo root:
+
+    node tools/build-package-pages.js
+
+It rewrites the 13 pages, the package block in `sitemap.xml`, and the
+package list + schema in `pages/packages.html`. Do not hand-edit the
+generated pages; your changes would be overwritten on the next run.
+To add a package: add it to `data.js` with a new `slug`, add a matching
+entry in `package-itineraries.js`, then run the script.
+
 ---
 
 ## 10. LANGUAGES (English, Hindi, Urdu, Arabic, Marathi, Gujarati, Bangla)
@@ -316,6 +338,10 @@ node tools/i18n/extract.js --render     (needs Playwright + a local server on :8
 node tools/i18n/translate.js            (drafts the new strings)
 node tools/i18n/build.js                (rebuilds all languages + sitemap)
 ```
+
+Package pages: run `node tools/build-package-pages.js` FIRST, then the
+three commands above (the package script rewrites the English package
+pages, the language build then adds the language links back).
 
 Text that has no translation yet simply stays in English on the
 translated pages, so nothing breaks if you skip this for a small edit.

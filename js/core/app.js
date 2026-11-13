@@ -12,7 +12,6 @@ const App = {
   init() {
     this.detectRoot();
     this.injectLayout();
-    this.initLoader();
     this.initNavbar();
     this.initScrollReveal();
     this.initCounters();
@@ -57,13 +56,6 @@ const App = {
     const mobileLinks = pages.map(p => `<a href="${p.href}">${p.label}</a>`).join('');
 
     return `
-<!-- Page Loader -->
-<div id="page-loader" class="page-loader" role="status" aria-label="Loading">
-  <div class="loader-plane">✈</div>
-  <div class="loader-brand"><span>Al Khalis</span> Tours &amp; Travels</div>
-  <div class="loader-track"><div class="loader-fill"></div></div>
-</div>
-
 <!-- Magic Social Menu -->
 <div class="social-menu" id="socialMenu" role="navigation" aria-label="Social media links">
   <button class="social-menu__toggle" id="socialToggle"

@@ -154,17 +154,21 @@ window.AlKhalis.Renderer = {
     const wrap = document.getElementById('packages-grid');
     if (!wrap || !this.D.packages) return;
     wrap.className = 'pkg-grid reveal-group';
-    wrap.innerHTML = this.D.packages.map(p => `
+    const root = window.SITE_ROOT || '';
+    wrap.innerHTML = this.D.packages.map(p => {
+      const detail = p.slug ? `${root}pages/packages/${p.slug}.html` : '';
+      const enquire = `${root}pages/contact.html?pkg=${encodeURIComponent(p.name)}`;
+      return `
       <article class="pkg-card" data-cat="${p.cat}">
-        <div class="pkg-card__img-wrap">
+        <${detail ? `a href="${detail}"` : 'div'} class="pkg-card__img-wrap" ${detail ? `aria-label="${p.name} – view itinerary" style="display:block"` : ''}>
           <img src="${p.img}" alt="${p.alt||p.name}" class="pkg-card__img" loading="lazy"
                onerror="this.parentElement.style.background='linear-gradient(135deg,#0D1B2A,#1B2A3E)'">
           <div class="pkg-card__img-overlay"></div>
           <span class="pkg-card__badge pkg-card__badge--${p.tagType}">${p.tag}</span>
           <span class="pkg-card__nights"><i class="fa-solid fa-moon"></i> ${p.nights} Nights</span>
-        </div>
+        </${detail ? 'a' : 'div'}>
         <div class="pkg-card__body">
-          <div class="pkg-card__name">${p.name}</div>
+          <h3 class="pkg-card__name">${detail ? `<a href="${detail}" style="color:inherit;text-decoration:none">${p.name}</a>` : p.name}</h3>
           <div class="pkg-card__dest"><i class="fa-solid fa-location-dot" style="color:#B8860B"></i> ${p.dest}</div>
           <div class="pkg-includes">
             ${p.includes.map(inc=>`<span class="pkg-inc">${inc}</span>`).join('')}
@@ -174,12 +178,13 @@ window.AlKhalis.Renderer = {
               <div class="pkg-price-big">₹${p.price.toLocaleString('en-IN')}</div>
               <div class="pkg-price-note">${p.priceNote}</div>
             </div>
-            <a href="${window.SITE_ROOT||''}pages/contact.html?pkg=${encodeURIComponent(p.name)}" class="pkg-book-btn">
-              Book Now <i class="fa-solid fa-arrow-right"></i>
+            <a href="${detail || enquire}" class="pkg-book-btn">
+              ${detail ? 'View Itinerary' : 'Book Now'} <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>
-      </article>`).join('');
+      </article>`;
+    }).join('');
     this._bindPackageFilters();
   },
 

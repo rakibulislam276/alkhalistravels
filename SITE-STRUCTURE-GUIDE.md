@@ -146,6 +146,7 @@ alkhalistravels\                        ← THE REPO ROOT
 | Colors / fonts / spacing | `css\base\tokens.css` | Change once, applies everywhere |
 | Mobile layout issues | Bottom of `css\components\color-fix.css` | The mobile-fix block |
 | Dark (night) mode colours | `css\components\theme.css` — palette in section 2, fixes in section 4 | Light mode is untouched by this file |
+| Top bar "Limited Seats — Umrah <month>" offer | `js\core\app.js` — `umrahOfferText()` | Month and year update automatically; wording per language is in `UMRAH_OFFER` |
 | Day/night button behaviour | `js\core\app.js` — `initTheme()` | Choice saved in the browser as `ak-theme` |
 | Privacy Policy text | `pages\privacy.html` | |
 | 404 page | `404.html` | Self-contained; safe to edit alone |

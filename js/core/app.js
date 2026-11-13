@@ -392,16 +392,19 @@ const App = {
 
   /* ── COUNTERS ──────────────────────────────────────────────── */
   initCounters() {
+    /* Observe every counter on its own, wherever it sits (hero, stats bar,
+       visa/hajj heroes). Previously only .stats-bar/.stats-section were
+       watched, so the hero numbers stayed at 0. */
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.querySelectorAll('[data-target]').forEach(el => this._animateCounter(el));
-          obs.unobserve(e.target);
-        }
+        if (e.isIntersecting) { this._animateCounter(e.target); obs.unobserve(e.target); }
       });
     }, { threshold: 0.3 });
-    const observe = () => document.querySelectorAll('.stats-bar,.stats-section').forEach(el => obs.observe(el));
-    observe(); setTimeout(observe, 300);
+    const observe = () => document.querySelectorAll('[data-target]:not([data-counted])').forEach(el => {
+      el.setAttribute('data-counted', '1');
+      obs.observe(el);
+    });
+    observe(); setTimeout(observe, 300); setTimeout(observe, 1200);
   },
 
   _animateCounter(el) {

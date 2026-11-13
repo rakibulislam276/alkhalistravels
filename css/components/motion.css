@@ -1,0 +1,69 @@
+/* ================================================================
+   MOTION.CSS — light, site-wide animations
+   - Everything is CSS transitions/transforms (GPU-friendly, no layout work)
+   - Content is never hidden unless JS (js/core/motion.js) is running,
+     so crawlers and no-JS visitors always see the full page
+   - All motion is switched off for visitors who ask for reduced motion
+   ================================================================ */
+
+/* Scroll progress bar (gold line at the very top) */
+.motion-progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 10001;
+  background: linear-gradient(90deg, #B8860B, #C9A84C, #E8C872);
+  transform-origin: 0 50%; transform: scaleX(0);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* ── Hero entrance (transform only, so the hero stays visible for LCP) ── */
+  .hero__tag, .hero__title, .hero__desc, .hero__btns, .hero__mini-stats,
+  .page-hero__title, .page-hero__subtitle {
+    animation: motionRise .8s cubic-bezier(.2,.7,.2,1) both;
+  }
+  .hero__title, .page-hero__subtitle { animation-delay: .08s; }
+  .hero__desc   { animation-delay: .16s; }
+  .hero__btns   { animation-delay: .24s; }
+  .hero__mini-stats { animation-delay: .32s; }
+  @keyframes motionRise { from { transform: translateY(18px); } to { transform: none; } }
+
+  /* ── Scroll reveal (class added by motion.js only to off-screen items) ── */
+  .m-reveal {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);
+    transition-delay: var(--m-delay, 0s);
+  }
+  .m-reveal.m-in { opacity: 1; transform: none; }
+
+  /* ── Card hover: lift + soft gold shadow ── */
+  .dest-card, .testi-card, .blog-card, .visa-card, .hajj-tier-card,
+  .departure-card, .partner-card, .visa-step {
+    transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease, border-color .35s ease;
+  }
+  .dest-card:hover, .testi-card:hover, .blog-card:hover, .visa-card:hover,
+  .hajj-tier-card:hover, .departure-card:hover, .visa-step:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 34px rgba(10,22,40,.14), 0 4px 12px rgba(184,134,11,.12);
+  }
+  .partner-card:hover { transform: translateY(-3px) scale(1.04); }
+
+  /* ── Image zoom inside cards ── */
+  .dest-card img, .blog-card img, .service-card--img img, .blog-card__img {
+    transition: transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  .dest-card:hover img, .blog-card:hover img, .service-card--img:hover img,
+  .blog-card:hover .blog-card__img { transform: scale(1.07); }
+
+  /* ── Button shine sweep on hover ── */
+  .btn--gold { position: relative; overflow: hidden; }
+  .btn--gold::after {
+    content: ""; position: absolute; top: 0; left: -75%; width: 50%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,.45), transparent);
+    transform: skewX(-20deg); pointer-events: none;
+  }
+  .btn--gold:hover::after { left: 125%; transition: left .7s ease; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-progress { display: none; }
+}

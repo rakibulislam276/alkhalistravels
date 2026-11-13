@@ -202,7 +202,7 @@ window.AlKhalis.Renderer = {
     const wrap = document.getElementById('blog-posts');
     if (!wrap || !this.D.blogPosts) return;
     const bgs = ['linear-gradient(135deg,#1a0533,#3d0c02)','linear-gradient(135deg,#1a1a2e,#0f3460)','linear-gradient(135deg,#0f3460,#533483)','linear-gradient(135deg,#1a472a,#2d6a4f)','linear-gradient(135deg,#8B6914,#C9A84C)'];
-    const prefix = window.location.pathname.includes('/pages/') ? '../' : '';
+    const prefix = window.SITE_ROOT || (window.location.pathname.includes('/pages/') ? '../' : '');
     wrap.innerHTML = this.D.blogPosts.map((p,i) => `
       <article class="blog-card reveal">
         <div class="blog-card__img" style="${p.img

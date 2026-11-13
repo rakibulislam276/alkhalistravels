@@ -1,0 +1,153 @@
+/* ================================================================
+   I18N.CSS — Language switcher + per-language typography + RTL
+   Al Khalis Tours and Travels
+   Loaded on every page (English and translated) by tools/i18n/build.js.
+
+   1. Language switcher button + dropdown
+   2. Fonts per script (Devanagari, Gujarati, Bengali, Arabic/Urdu)
+   3. Right-to-left fixes for Urdu and Arabic
+   ================================================================ */
+
+/* ── 1. LANGUAGE SWITCHER ─────────────────────────────────────── */
+.lang-switch {
+  position: relative;
+  flex-shrink: 0;
+  font-family: 'Poppins', 'Outfit', system-ui, sans-serif;
+}
+.lang-switch__btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  height: 38px;
+  padding: 0 10px 0 9px;
+  border-radius: 19px;
+  border: 1px solid rgba(201,168,76,0.45);
+  background: rgba(255,255,255,0.08);
+  color: #F4D03F;
+  font: 600 0.78rem/1 inherit;
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background .25s ease, border-color .25s ease, color .25s ease;
+}
+.lang-switch__btn:hover { background: rgba(201,168,76,0.18); border-color: #DAA520; }
+.lang-switch__btn:focus-visible { outline: 2px solid #DAA520; outline-offset: 2px; }
+.lang-switch__btn > svg:first-child { width: 17px; height: 17px; display: block; }
+.lang-switch__cur { white-space: nowrap; max-width: 4.5em; overflow: hidden; text-overflow: ellipsis; }
+.lang-switch__caret { width: 9px; height: 7px; transition: transform .2s ease; }
+.lang-switch.is-open .lang-switch__caret { transform: rotate(180deg); }
+
+/* White (scrolled) navbar in light mode: dark-on-light, same as the theme toggle */
+#navbar.scrolled .lang-switch__btn {
+  background: rgba(184,134,11,0.08);
+  border-color: rgba(184,134,11,0.40);
+  color: #8B6508;
+}
+#navbar.scrolled .lang-switch__btn:hover { background: rgba(184,134,11,0.16); }
+
+.lang-switch__menu {
+  position: absolute; top: calc(100% + 8px); right: 0;
+  z-index: 1100;
+  min-width: 200px;
+  margin: 0; padding: 6px;
+  list-style: none;
+  background: #fff;
+  border: 1px solid rgba(201,168,76,0.30);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(10,22,40,0.22);
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+}
+.lang-switch.is-open .lang-switch__menu { opacity: 1; visibility: visible; transform: none; }
+.lang-switch__item {
+  display: flex; align-items: center; gap: 8px;
+  min-height: 42px;              /* comfortable tap target on phones */
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #1A1A2E;
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+.lang-switch__item:hover, .lang-switch__item:focus-visible { background: rgba(201,168,76,0.12); outline: none; }
+.lang-switch__item.is-active { background: rgba(201,168,76,0.16); font-weight: 600; }
+.lang-switch__native { flex: 1; }
+.lang-switch__en { font-size: 0.72rem; color: #6B7280; font-family: 'Poppins', system-ui, sans-serif; }
+.lang-switch__tick { color: #B8860B; font-weight: 700; }
+
+/* Day/night theme (data-theme="dark" set by the theme toggle) */
+html[data-theme="dark"] .lang-switch__menu { background: #111C2E; border-color: rgba(201,168,76,0.25); box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
+html[data-theme="dark"] .lang-switch__item { color: #E9EDF3; }
+html[data-theme="dark"] .lang-switch__en { color: #A9B4C4; }
+html[data-theme="dark"] .lang-switch__tick { color: #F4D03F; }
+html[data-theme="dark"] #navbar.scrolled .lang-switch__btn { background: rgba(255,255,255,0.06); border-color: rgba(201,168,76,0.45); color: #F4D03F; }
+
+/* Header button group (built by js/core/i18n.js): day/night toggle + language */
+.nav-tools { display: flex; align-items: center; gap: 8px; flex-shrink: 0; margin-left: 12px; }
+.nav-inner .nav-tools > .theme-toggle, .nav-inner .nav-tools > .lang-switch { margin: 0; }
+/* Phones / tablets: pushed to the right, next to the hamburger */
+@media (max-width: 1199px) {
+  .nav-inner .nav-tools { margin-left: auto; margin-right: 6px; gap: 6px; }
+}
+@media (max-width: 768px) {
+  .lang-switch__btn { height: 36px; padding: 0 8px; gap: 4px; }
+  .lang-switch__caret { display: none; }
+  .lang-switch__menu { position: fixed; top: 64px; right: 12px; left: auto; min-width: 210px; max-width: calc(100vw - 24px); }
+}
+@media (max-width: 360px) {
+  .lang-switch__btn > svg:first-child { display: none; }
+}
+
+/* ── 2. FONTS PER SCRIPT ──────────────────────────────────────── */
+/* Icon fonts keep their own family */
+html[lang="hi"] body, html[lang="mr"] body,
+html[lang="hi"] body :where(*:not(i):not(.fa):not(.fas):not(.far):not(.fab):not([class^="fa-"]):not([class*=" fa-"])),
+html[lang="mr"] body :where(*:not(i):not(.fa):not(.fas):not(.far):not(.fab):not([class^="fa-"]):not([class*=" fa-"])) {
+  font-family: 'Poppins', 'Noto Sans Devanagari', 'Mangal', system-ui, sans-serif;
+}
+html[lang="gu"] body,
+html[lang="gu"] body :where(*:not(i):not(.fa):not(.fas):not(.far):not(.fab):not([class^="fa-"]):not([class*=" fa-"])) {
+  font-family: 'Noto Sans Gujarati', 'Poppins', 'Shruti', system-ui, sans-serif;
+}
+html[lang="bn"] body,
+html[lang="bn"] body :where(*:not(i):not(.fa):not(.fas):not(.far):not(.fab):not([class^="fa-"]):not([class*=" fa-"])) {
+  font-family: 'Noto Sans Bengali', 'Poppins', 'Vrinda', system-ui, sans-serif;
+}
+html[lang="ur"] body, html[lang="ar"] body,
+html[lang="ur"] body :where(*:not(i):not(.fa):not(.fas):not(.far):not(.fab):not([class^="fa-"]):not([class*=" fa-"])),
+html[lang="ar"] body :where(*:not(i):not(.fa):not(.fas):not(.far):not(.fab):not([class^="fa-"]):not([class*=" fa-"])) {
+  font-family: 'Noto Naskh Arabic', 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+}
+/* Indic and Arabic scripts need a little more line height, and no fake italics / tracking */
+html:not([lang="en"]) body { line-height: 1.75; }
+html:not([lang="en"]) :is(h1, h2, h3, h4) { line-height: 1.35; letter-spacing: 0; font-style: normal; }
+html:not([lang="en"]) :is(em, i):not([class*="fa"]) { font-style: normal; }
+/* Letter-spacing breaks Devanagari/Gujarati/Bengali conjuncts and Arabic joining */
+html:not([lang="en"]) body, html:not([lang="en"]) body *:not(.lang-switch__en) { letter-spacing: 0 !important; }
+/* All-caps styling means nothing in these scripts */
+html:not([lang="en"]) body * { text-transform: none !important; }
+/* Long translated words must wrap on narrow screens instead of widening the page */
+html:not([lang="en"]) :is(h1, h2, h3, p, li, a, span, td, th, label, button) { overflow-wrap: anywhere; }
+
+/* ── 3. RIGHT-TO-LEFT (Urdu, Arabic) ──────────────────────────── */
+[dir="rtl"] body { text-align: right; }
+[dir="rtl"] .nav-tools { margin-left: 0; margin-right: 12px; }
+[dir="rtl"] .lang-switch__menu { right: auto; left: 0; }
+@media (max-width: 1199px) {
+  [dir="rtl"] .nav-inner .nav-tools { margin-right: auto; margin-left: 6px; }
+}
+@media (max-width: 768px) {
+  [dir="rtl"] .lang-switch__menu { right: auto; left: 12px; }
+}
+/* Centered blocks stay centered */
+[dir="rtl"] :is(.text-center, .section-header, .hero__content, .page-hero, .cta-section) { text-align: center; }
+/* Phone numbers, emails, prices, codes and form fields that hold Latin data read left-to-right */
+[dir="rtl"] :is(a[href^="tel:"], a[href^="mailto:"], input[type="tel"], input[type="email"], input[type="number"], input[type="date"]) { direction: ltr; unicode-bidi: isolate; }
+[dir="rtl"] a[href^="tel:"], [dir="rtl"] a[href^="mailto:"] { display: inline-block; }
+/* Inputs follow the direction of what is typed (English city names, Arabic text) */
+[dir="rtl"] :is(input:not([type="radio"]):not([type="checkbox"]), textarea, select) { unicode-bidi: plaintext; }
+/* Logos, carousels and tickers keep their original motion */
+[dir="rtl"] :is(.marquee, .marquee__track, .partners-track, .partners-marquee, .ticker) { direction: ltr; }
+/* Bulleted lists indent from the right */
+[dir="rtl"] :is(ul, ol) { padding-right: 1.25em; padding-left: 0; }
+[dir="rtl"] :is(.nav-links, .footer-links, .mobile-nav, .lang-switch__menu, .social-menu__items, [role="list"]) { padding-right: 0; }
+/* Arrows that point "forward" */
+[dir="rtl"] .fa-arrow-right, [dir="rtl"] .fa-chevron-right, [dir="rtl"] .fa-angle-right { transform: scaleX(-1); }

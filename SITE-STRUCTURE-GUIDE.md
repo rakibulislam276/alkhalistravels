@@ -276,3 +276,54 @@ instead of showing the cached old one.
 - **Changing CSS or JS?** Consider bumping the `?v=` number on that
   file's `<link>`/`<script>` tag so all visitors get the update
   immediately.
+
+---
+
+## 10. LANGUAGES (English, Hindi, Urdu, Arabic, Marathi, Gujarati, Bangla)
+
+English is the default and stays at the site root. Every other language is
+a full copy of the site in its own folder, so Google indexes each one:
+
+| Language | Folder | Example |
+|---|---|---|
+| Hindi | `hi\` | alkhalistravels.com/hi/pages/visa.html |
+| Urdu (right-to-left) | `ur\` | alkhalistravels.com/ur/ |
+| Arabic (right-to-left) | `ar\` | alkhalistravels.com/ar/ |
+| Marathi | `mr\` | alkhalistravels.com/mr/ |
+| Gujarati | `gu\` | alkhalistravels.com/gu/ |
+| Bangla | `bn\` | alkhalistravels.com/bn/ |
+
+**Never edit files inside `hi\ ur\ ar\ mr\ gu\ bn\` by hand.** They are
+generated from the English pages by a script and are overwritten on every
+run. Edit the English page, then regenerate.
+
+| File | What it does |
+|---|---|
+| `tools\i18n\dict\<lang>.json` | The translations: `"English text": "translated text"`. Fix a wrong translation here. |
+| `tools\i18n\glossary.tsv` | Hand-checked translations of menu items and key travel words. These always win. |
+| `tools\i18n\build.js` | Regenerates every language folder, the hreflang tags and `sitemap.xml`. |
+| `tools\i18n\extract.js` | Lists the English text on the site and how many strings each language is missing. |
+| `tools\i18n\translate.js` | Fills missing strings with a draft machine translation (never overwrites existing ones). |
+| `js\core\i18n.js` | The language button in the header, plus translation of text that JavaScript adds (menu, footer, cards from `data.js`). |
+| `js\i18n\<lang>.js` | Generated: the strings `i18n.js` needs for each language. |
+| `css\components\i18n.css` | Language button styles, fonts for each script, right-to-left fixes. |
+
+**After changing English text (or adding a page under `pages\`):**
+needs Node.js (nodejs.org). In a terminal opened in the repo folder:
+
+```
+node tools/i18n/extract.js --render     (needs Playwright + a local server on :8765; plain "extract.js" also works)
+node tools/i18n/translate.js            (drafts the new strings)
+node tools/i18n/build.js                (rebuilds all languages + sitemap)
+```
+
+Text that has no translation yet simply stays in English on the
+translated pages, so nothing breaks if you skip this for a small edit.
+
+**To correct a translation:** open `tools\i18n\dict\<lang>.json`, search
+for the English sentence, change the text on the right, save, run
+`node tools/i18n/build.js`, commit everything.
+
+The draft translations were machine-made and then checked for the menu,
+buttons and main headings. Have a native speaker read the important
+pages (home, Hajj & Umrah, visa) and fix anything in the dictionary.

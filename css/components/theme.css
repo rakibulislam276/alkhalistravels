@@ -301,6 +301,11 @@ html[data-theme="dark"] .fl-result-price-val,
 html[data-theme="dark"] .fl-no-results-cta p,
 html[data-theme="dark"] .fl-why-card h3,
 html[data-theme="dark"] .fl-why-card p,
+html[data-theme="dark"] .fx-status,
+html[data-theme="dark"] .fx-flat,
+html[data-theme="dark"] .fx-cur__text strong,
+html[data-theme="dark"] .fx-cur__name,
+html[data-theme="dark"] .fx-cur__unit,
 html[data-theme="dark"] .legal-updated,
 html[data-theme="dark"] .legal-wrap h2,
 html[data-theme="dark"] .legal-wrap h3,
@@ -450,6 +455,8 @@ html[data-theme="dark"] #umrah-visa-page .uv-res--no a,
 html[data-theme="dark"] .fl-popular-label i,
 html[data-theme="dark"] .fl-chip,
 html[data-theme="dark"] .fl-multi-del,
+html[data-theme="dark"] .fx-msg a,
+html[data-theme="dark"] .pd-box--exc h3 i,
 html[data-theme="dark"] .visa-hero__badge,
 html[data-theme="dark"] .visa-hero__stat-num,
 html[data-theme="dark"] .visa-count-badge,
@@ -596,7 +603,9 @@ html[data-theme="dark"] .section:not(.section-dark):not(.cta-section):not([style
 html[data-theme="dark"] .section:not(.section-dark):not(.cta-section):not([style*="background:#"]):not([style*="background: #"]) p,
 html[data-theme="dark"] .section:not(.section-dark):not(.cta-section):not([style*="background:#"]):not([style*="background: #"]) li,
 html[data-theme="dark"] .trust-badge,
-html[data-theme="dark"] .partner-logo {
+html[data-theme="dark"] .partner-logo,
+html[data-theme="dark"] .fx-table td.fx-buy,
+html[data-theme="dark"] .fx-msg {
   color:var(--dk-text) !important;
 }
 html[data-theme="dark"] .bg-cream,
@@ -610,7 +619,8 @@ html[data-theme="dark"] .trust-badge {
 html[data-theme="dark"] .pkg-inc,
 html[data-theme="dark"] .blog-tag,
 html[data-theme="dark"] .urgency-pill,
-html[data-theme="dark"] .amenity-chip {
+html[data-theme="dark"] .amenity-chip,
+html[data-theme="dark"] .fx-table td.fx-sell {
   color:var(--gold-light) !important;
 }
 html[data-theme="dark"] .blog-meta-item,
@@ -702,6 +712,16 @@ html[data-theme="dark"] .btn--navy {
   border: 1px solid rgba(218,165,32,0.55) !important;
 }
 html[data-theme="dark"] .btn--navy:hover { background: #1F3050 !important; border-color: #DAA520 !important; }
+
+/* Packages page: "Full day-by-day itineraries" box (inline-styled) */
+html[data-theme="dark"] .pkg-links {
+  background: var(--dk-surface) !important;
+  border-color: var(--dk-border) !important;
+}
+html[data-theme="dark"] .pkg-links a { color: var(--gold-light) !important; }
+
+/* Package detail: "All packages" button is gold in dark mode, so navy text */
+html[data-theme="dark"] .pd-pn a.pd-pn__all, html[data-theme="dark"] a.pd-pn__all.pd-pn__all { color: #0D1B2A !important; }
 
 /* ── 5. NAVBAR FIT ────────────────────────────────────────────────
    The ten nav links + Book Now + this button only fit on one line from

@@ -358,6 +358,7 @@ function buildPage(p, idx) {
     });
   })();
 </script>
+<link rel="stylesheet" href="../../css/components/ui-fixes.css">
 </body>
 </html>
 `;

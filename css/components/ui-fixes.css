@@ -1,0 +1,252 @@
+/* ================================================================
+   UI-FIXES.CSS — readability, contrast and mobile-layout fixes.
+   Loaded LAST on every page (just before </body>) so it wins over
+   the older override files (color-fix, theme, homepage-sections-fix).
+   Sections:
+     1. Hero booking widget — solid card, one colour per tab,
+        round icon badges
+     2. Contact page — "Get In Touch" card contrast + stacked grid
+     3. Forex page — rate table fits a phone screen
+     4. Floating buttons + sticky contact bar on phones
+     5. Small global guards (overflow, radio labels)
+   ================================================================ */
+
+/* ── 1. BOOKING WIDGET ─────────────────────────────────────────── */
+#booking-widget {
+  --bw-card:   #0F1D35;
+  --bw-field:  #18294A;
+  --bw-line:   #34507A;
+  --bw-text:   #FFFFFF;
+  --bw-soft:   #D3DCEA;
+  --bw-accent: #1D5FD1;
+  background: var(--bw-card) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border: 1px solid rgba(201, 168, 76, 0.55) !important;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.5) !important;
+}
+html[data-theme="dark"] #booking-widget { --bw-card: #0C1628; --bw-field: #15243F; }
+
+/* Each tab has its own colour (white text passes WCAG AA on all) */
+.bw-tab[data-tab="flight"]   { --tab: #1D5FD1; }
+.bw-tab[data-tab="hotel"]    { --tab: #7B3FC4; }
+.bw-tab[data-tab="packages"] { --tab: #C2570C; }
+.bw-tab[data-tab="umrah"]    { --tab: #15803D; }
+.bw-tab[data-tab="visa"]     { --tab: #C0263A; }
+.bw-tab[data-tab="forex"]    { --tab: #0E7490; }
+
+#booking-widget:has(.bw-tab[data-tab="hotel"].active)    { --bw-accent: #7B3FC4; }
+#booking-widget:has(.bw-tab[data-tab="packages"].active) { --bw-accent: #C2570C; }
+#booking-widget:has(.bw-tab[data-tab="umrah"].active)    { --bw-accent: #15803D; }
+#booking-widget:has(.bw-tab[data-tab="visa"].active)     { --bw-accent: #C0263A; }
+#booking-widget:has(.bw-tab[data-tab="forex"].active)    { --bw-accent: #0E7490; }
+
+#booking-widget .bw-tabs {
+  background: var(--bw-card) !important;
+  border-bottom: 3px solid var(--bw-accent) !important;
+  gap: 3px;
+  padding: 6px 6px 0;
+}
+#booking-widget .bw-tab {
+  flex-direction: column;
+  gap: 5px;
+  padding: 9px 4px 8px !important;
+  background: var(--tab) !important;
+  color: #FFFFFF !important;
+  border: 0 !important;
+  border-radius: 10px 10px 0 0;
+  opacity: 0.82;
+  font-size: 0.74rem !important;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+#booking-widget .bw-tab:hover { opacity: 1; background: var(--tab) !important; }
+#booking-widget .bw-tab.active {
+  opacity: 1;
+  transform: translateY(-3px);
+  box-shadow: inset 0 -3px 0 #FFFFFF, 0 -4px 14px rgba(0, 0, 0, 0.35);
+}
+#booking-widget .bw-tab:focus-visible { outline: 2px solid #FFFFFF; outline-offset: -4px; }
+
+/* Round icon badge on every tab (desktop and phone) */
+#booking-widget .bw-tab-icon {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  font-size: 1rem !important;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  flex: none;
+}
+#booking-widget .bw-tab-label {
+  display: block !important;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Panel and fields: solid, high-contrast */
+#booking-widget .bw-panel { background: var(--bw-card) !important; }
+#booking-widget .bw-label { color: var(--bw-soft) !important; }
+#booking-widget .bw-input,
+#booking-widget .bw-pax-display {
+  background-color: var(--bw-field) !important;
+  border: 1.5px solid var(--bw-line) !important;
+  color: var(--bw-text) !important;
+}
+#booking-widget .bw-input::placeholder { color: #A7B4C9 !important; opacity: 1; }
+#booking-widget .bw-input:focus { border-color: var(--gold, #C9A84C) !important; }
+#booking-widget .bw-radio-label,
+#booking-widget .bw-check-label { color: #EEF2F8 !important; white-space: nowrap; }
+#booking-widget .bw-popular-label { color: var(--bw-soft) !important; }
+#booking-widget .bw-chip {
+  background: #1C2E50 !important;
+  border-color: rgba(232, 201, 122, 0.55) !important;
+  color: #F3D98F !important;
+}
+#booking-widget .bw-chip:hover { background: var(--gold, #C9A84C) !important; color: #0A1628 !important; }
+#booking-widget .bw-price-label,
+#booking-widget .bw-price-note,
+#booking-widget .bw-visa-stat__label { color: var(--bw-soft) !important; }
+#booking-widget [style*="rgba(255,255,255,0.4)"],
+#booking-widget [style*="rgba(255,255,255,0.5)"] { color: #C3CDDC !important; }
+#booking-widget .bw-search-btn { background: linear-gradient(135deg, #C9A84C, #E8C97A, #C9A84C) !important; color: #0A1628 !important; }
+
+/* Radio row: never break "One Way" over two lines */
+#booking-widget .bw-trip-row { flex-wrap: wrap; gap: 0.6rem 1.2rem; }
+
+@media (max-width: 640px) {
+  #booking-widget .bw-tabs { gap: 2px; padding: 5px 4px 0; }
+  #booking-widget .bw-tab { padding: 8px 1px 7px !important; font-size: 0.6rem !important; letter-spacing: 0; gap: 4px; }
+  #booking-widget .bw-tab-icon { width: 36px; height: 36px; font-size: 1.15rem !important; }
+  #booking-widget .bw-trip-row { gap: 0.5rem 1rem; }
+  #booking-widget .bw-radio-label { font-size: 0.82rem; }
+}
+@media (max-width: 359px) {
+  #booking-widget .bw-tab-icon { width: 32px; height: 32px; font-size: 1rem !important; }
+  #booking-widget .bw-tab-label { display: none !important; }
+}
+
+/* ── 2. CONTACT PAGE ───────────────────────────────────────────── */
+html .contact-info-card h3,
+html[data-theme] .contact-info-card h3 { color: #FFFFFF !important; }
+html .contact-info-card > p,
+html[data-theme] .contact-info-card > p { color: rgba(255, 255, 255, 0.82) !important; }
+
+@media (max-width: 900px) {
+  #enquiry-form .container > div[style*="grid-template-columns"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 2rem !important;
+  }
+  #enquiry-form .form-card, #enquiry-form .contact-info-card { max-width: 100%; min-width: 0; }
+}
+@media (max-width: 600px) {
+  #enquiry-form .form-row { grid-template-columns: minmax(0, 1fr) !important; }
+  .contact-info-card { padding: 1.5rem 1.25rem !important; }
+}
+
+/* ── 3. FOREX TABLE ON PHONES ──────────────────────────────────── */
+@media (max-width: 600px) {
+  .fx-table-wrap { overflow-x: hidden !important; padding: 0 !important; }
+  .fx-table { width: 100% !important; min-width: 0 !important; table-layout: fixed; }
+  .fx-table thead th:first-child, .fx-table tbody td:first-child { width: 46%; }
+  .fx-table thead th { padding: 10px 8px !important; font-size: 0.68rem !important; letter-spacing: 0.3px; white-space: nowrap; }
+  .fx-table td { padding: 10px 8px !important; }
+  .fx-table td.fx-sell, .fx-table td.fx-buy { font-size: 0.9rem !important; padding-left: 2px !important; }
+  .fx-cur { gap: 7px; }
+  .fx-flag { font-size: 1.2rem !important; }
+  .fx-cur__text { min-width: 0; }
+  .fx-cur__unit { font-size: 0.66rem !important; white-space: normal; }
+  .fx-table td.fx-msg { width: auto; }
+}
+@media (max-width: 359px) {
+  .fx-table td.fx-sell, .fx-table td.fx-buy { font-size: 0.82rem !important; }
+}
+html[data-theme="dark"] .fx-table td.fx-sell { color: #E8C872 !important; }
+html[data-theme="dark"] .fx-table td.fx-buy  { color: #6EE7A0 !important; }
+html[data-theme="dark"] .fx-cur__text strong { color: #FFFFFF !important; }
+
+/* ── 4. FLOATING BUTTONS + STICKY BAR ON PHONES ────────────────── */
+@media (max-width: 768px) {
+  /* The bottom bar already has Call + WhatsApp: keep it on screen and
+     drop the duplicate round buttons that covered page content. */
+  body:not(.pd-page) .sticky-cta { transform: none !important; }
+  body:not(.pd-page) .float-btn--wa,
+  body:not(.pd-page) .float-btn--call { display: none !important; }
+  body:not(.pd-page) { padding-bottom: 64px; }
+
+  .sticky-cta { padding: 8px 10px !important; }
+  .sticky-cta__left { display: none !important; }
+  .sticky-cta__actions {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: 6px !important;
+  }
+  .sticky-cta__actions .btn {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+    padding: 10px 4px !important;
+    font-size: 0.74rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Back-to-top and share: smaller, tucked above the bar */
+  .float-btns-wrap { right: 10px !important; bottom: 74px !important; gap: 8px !important; }
+  .float-btn { width: 42px !important; height: 42px !important; }
+  .float-btn svg { width: 20px !important; height: 20px !important; }
+  .float-btn__tip { display: none !important; }
+  .social-menu { left: 10px !important; bottom: 74px !important; width: 44px !important; height: 44px !important; }
+  .social-menu__toggle { width: 44px !important; height: 44px !important; }
+  .social-menu::after { display: none !important; }
+}
+
+/* ── 5. GLOBAL GUARDS ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  html, body { overflow-x: clip; }
+  .page-hero { overflow: hidden; }
+}
+
+/* ── 6. DARK CARDS INSIDE LIGHT SECTIONS ───────────────────────────
+   color-fix.css forces dark headings/paragraphs on every light
+   section with a very specific selector, which also hit the navy
+   cards inside them (Contact "Get In Touch", Forex converter, Hotel
+   and Hajj call-outs, blog CTA). :not(#_) lifts specificity above it. */
+:is(.contact-info-card, .converter-card, .bg-navy, .article-cta):not(#_) :is(h2, h3, h4) { color: #FFFFFF !important; }
+:is(.contact-info-card, .converter-card, .bg-navy, .article-cta):not(#_) :is(p, li) { color: rgba(255, 255, 255, 0.82) !important; }
+
+/* ── 7. SMALLER CONTRAST + OVERFLOW FIXES FOUND IN THE AUDIT ───── */
+/* Internal links strip above the footer was nearly invisible */
+section[aria-label="Site navigation links"] h2 { color: rgba(255, 255, 255, 0.66) !important; }
+section[aria-label="Site navigation links"] a { color: rgba(255, 255, 255, 0.72) !important; border-color: rgba(255, 255, 255, 0.16) !important; }
+section[aria-label="Site navigation links"] a:hover { color: #E8C97A !important; }
+section[aria-label="Site navigation links"] p { color: rgba(255, 255, 255, 0.5) !important; }
+
+/* Visa "Free" label: light green was unreadable on white cards */
+html:not([data-theme="dark"]) .visa-card__price-val--free { color: #15803D !important; }
+
+/* Visa search box and Hotel search form overflowed small phones */
+.visa-search-input { min-width: 0; width: 100%; }
+@media (max-width: 900px) {
+  .search-box > div[style*="grid-template-columns"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .search-box > div[style*="grid-template-columns"] > .form-group:first-child { grid-column: 1 / -1; }
+}
+@media (max-width: 520px) {
+  .search-box > div[style*="grid-template-columns"] { grid-template-columns: minmax(0, 1fr) !important; }
+  .search-box > div[style*="grid-template-columns"] > * { min-width: 0; }
+  .search-box > div[style*="grid-template-columns"] .btn { width: 100%; justify-content: center; }
+}
+#booking-widget .bw-panel { text-align: start; }
+/* Package pages: their own bottom bar has "Enquire" (WhatsApp) */
+@media (max-width: 768px) {
+  body.pd-page .float-btn--wa { display: none !important; }
+}

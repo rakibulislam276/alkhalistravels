@@ -49,7 +49,8 @@ async function render() {
   const b = await chromium.launch();
   for (const p of L.sourcePages()) {
     const pg = await b.newPage({ viewport: { width: 1280, height: 900 } });
-    await pg.goto('http://localhost:8765/' + p, { waitUntil: 'networkidle', timeout: 30000 }).catch(() => {});
+    const res = await pg.goto('http://localhost:8765/' + p, { waitUntil: 'load', timeout: 30000 });
+    if (!res || !res.ok()) throw new Error('Could not load ' + p + ' — is `python3 -m http.server 8765` running in the repo folder?');
     await pg.waitForTimeout(1200);
     // click through tab widgets so their hidden panels render too
     await pg.evaluate(async () => {
